@@ -147,16 +147,6 @@
               </p>
             </a>
           </li>
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
           <li class="nav-item">
             <a href="tickets.php" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
@@ -170,10 +160,31 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Catégories
+                Fonctions
                 <!-- <span class="right badge badge-danger">New</span> -->
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Catégories</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Status</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Localité</p>
+                    </a>
+                  </li>
+                </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -181,8 +192,23 @@
               <p>
                 Utilisateurs
                 <!-- <span class="right badge badge-danger">New</span> -->
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Role</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Liste</p>
+                    </a>
+                  </li>
+                </ul>
           </li>
           
 
