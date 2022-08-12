@@ -147,21 +147,40 @@
               </p>
             </a>
           </li>
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Widgets
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tickets.php" class="nav-link">
+              <i class="nav-icon fas fa-tags"></i>
+              <p>
+                Tickets
+                <span class="right badge badge-primary">6</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Catégories
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Utilisateurs
                 <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="tickets.html" class="nav-link">
-              <i class="nav-icon fas fa-tags"></i>
-              <p>
-                Tickets
-                <!-- <span class="right badge badge-primary">6</span> -->
               </p>
             </a>
           </li>

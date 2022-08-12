@@ -166,7 +166,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="index.html" class="nav-link ">
+            <a href="index.php" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Tableau de bord
@@ -184,7 +184,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="tickets.html" class="nav-link">
+            <a href="tickets.php" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
               <p>
                 Tickets
@@ -333,7 +333,7 @@
                     <td> 4</td>
                     <td class="project-actions text-right">
                       <a class="btn btn-primary btn-sm" href="#">
-                          <i class="fas fa-folder">
+                          <i class="fas fa-eye">
                           </i>
                           View
                       </a>
@@ -358,7 +358,7 @@
                     <td>5</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -383,7 +383,7 @@
                     <td>5.5</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -408,7 +408,7 @@
                     <td>6</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -431,7 +431,7 @@
                     <td>7</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -454,7 +454,7 @@
                     <td>6</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -477,7 +477,7 @@
                     <td>1.7</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -502,7 +502,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -527,7 +527,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -550,7 +550,7 @@
                     <td>1.9</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -575,7 +575,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -600,7 +600,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -623,7 +623,7 @@
                     <td>1.7</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -646,7 +646,7 @@
                     <td>1.7</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -671,7 +671,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -694,7 +694,7 @@
                     <td>1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -717,7 +717,7 @@
                     <td>1.1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -740,7 +740,7 @@
                     <td>1.2</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -763,7 +763,7 @@
                     <td>1.3</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -786,7 +786,7 @@
                     <td>1.4</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -809,7 +809,7 @@
                     <td>1.5</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -832,7 +832,7 @@
                     <td>1.6</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -855,7 +855,7 @@
                     <td>1.7</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -880,7 +880,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -905,7 +905,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -930,7 +930,7 @@
                       </td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -953,7 +953,7 @@
                     <td>125.5</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -976,7 +976,7 @@
                     <td>312.8</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -999,7 +999,7 @@
                     <td>419.3</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1022,7 +1022,7 @@
                     <td>522.1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1045,7 +1045,7 @@
                     <td>420</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1068,7 +1068,7 @@
                     <td>420.1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1091,7 +1091,7 @@
                     <td>413</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1114,7 +1114,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1137,7 +1137,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1160,7 +1160,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1183,7 +1183,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1206,7 +1206,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1229,7 +1229,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1252,7 +1252,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1275,7 +1275,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1298,7 +1298,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1328,7 +1328,7 @@
                     <td>3.1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1351,7 +1351,7 @@
                     <td>3.3</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1374,7 +1374,7 @@
                     <td>3.5</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1404,7 +1404,7 @@
                     <td>1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1427,7 +1427,7 @@
                     <td>1</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1450,7 +1450,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1473,7 +1473,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1517,7 +1517,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
@@ -1540,7 +1540,7 @@
                     <td>-</td>
                      <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                              <i class="fas fa-eye">
                               </i>
                               View
                           </a>
