@@ -165,7 +165,7 @@
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="tableaubord_liste.php" class="nav-link <?php if($tableau_chemin[0] == 'tableaubord') echo 'active'; ?>">
+              <a href="tableaubord_liste" class="nav-link <?php if($tableau_chemin[0] == 'tableaubord') echo 'active'; ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Tableau de bord
@@ -261,7 +261,7 @@
 
 
 
-            $tab["menu"]["utilisateur"]["liste"] = 1;
+            $tab["menu"]["utilisateur"]["liste.php"] = 1;
             $tab["menu"]["utilisateur"]["liste2"] = 1;
 
             $tab["menu"]["utilisateur"]["ajouter"] = 1;
@@ -306,6 +306,7 @@
 
                     if($a==1)
 
+                        // include('php/view/home/'.$tableau_chemin[0].'.php');
                         include('php/view/home/'.$tableau_chemin[0]);
 
                     break;

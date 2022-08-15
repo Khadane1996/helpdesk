@@ -176,7 +176,7 @@
             }
             else if($option=="details"){
                 include('php/view/utilisateur/details.php');
-            }else if($option=="liste"){
+            }else if($option=="liste.php"){
                 include('php/view/utilisateur/liste.php');
             }else if($option=="liste2"){
                 include('php/view/utilisateur/liste2.php');
