@@ -62,7 +62,7 @@
             }
             else if($option=="details"){
                 include('php/view/tableaubord/details.php');
-            }else if($option=="liste"){
+            }else if($option=="liste.php"){
                 include('php/view/tableaubord/liste.php');
             }
         }
