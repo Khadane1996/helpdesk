@@ -165,7 +165,7 @@
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="tableaubord_liste" class="nav-link <?php if($tableau_chemin[0] == 'tableaubord') echo 'active'; ?>">
+              <a href="tableaubord_liste.php" class="nav-link <?php if($tableau_chemin[0] == 'tableaubord') echo 'active'; ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Tableau de bord
@@ -174,7 +174,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="utilisateur_liste" class="nav-link <?php if($tableau_chemin[0] == 'utilisateur') echo 'active'; ?>">
+              <a href="utilisateur_liste.php" class="nav-link <?php if($tableau_chemin[0] == 'utilisateur') echo 'active'; ?>">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Utilisateurs
