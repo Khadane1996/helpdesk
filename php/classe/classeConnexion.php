@@ -15,7 +15,7 @@
                 /*On essaie d'etablir la connexion*/ 
 
 
-                    $conn = new PDO("mysql:host=localhost;dbname=autoecoles", "root", "");
+                    $conn = new PDO("mysql:host=localhost;dbname=hepldesk", "root", "");
 
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
