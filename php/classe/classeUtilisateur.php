@@ -8,6 +8,11 @@
 		private $idUtilisateur;
 		private $nomComplet;
 		private $email;
+<<<<<<< HEAD
+		private $adresse;
+		private $telephone;
+=======
+>>>>>>> main
 		private $idRole;
 		private $login;
 		private $motDePasse;
@@ -23,6 +28,11 @@
 				$this->idUtilisateur= "";
 				$this->nomComplet= "";
 				$this->email= "";
+<<<<<<< HEAD
+				$this->adresse= "";
+				$this->telephone= "";
+=======
+>>>>>>> main
 				$this->idRole= "";
 				$this->login= "";
 				$this->motDePasse= "";
@@ -34,9 +44,17 @@
 				$this->idUtilisateur= func_get_arg(0);
 				$this->nomComplet= func_get_arg(1);
 				$this->email= func_get_arg(2);
+<<<<<<< HEAD
+				$this->adresse= func_get_arg(3);
+				$this->telephone= func_get_arg(4);
+				$this->idRole= func_get_arg(5);
+				$this->login= func_get_arg(6);
+				$this->motDePasse= func_get_arg(7);
+=======
 				$this->idRole= func_get_arg(3);
 				$this->login= func_get_arg(4);
 				$this->motDePasse= func_get_arg(5);
+>>>>>>> main
 			}
 
 		}
@@ -64,7 +82,26 @@
 		public function setEmail($email){
 			$this->email = $email;
 		}
+<<<<<<< HEAD
+		
+		/** Getter et Setter de l'attribut "adresse" **/
+		public function getAdresse(){
+			return $this->adresse;
+		}
+		public function setAdresse($adresse){
+			$this->adresse = $adresse;
+		}
+		
+		/** Getter et Setter de l'attribut "telephone" **/
+		public function getTelephone(){
+			return $this->telephone;
+		}
+		public function setTelephone($telephone){
+			$this->telephone = $telephone;
+		}
+=======
 				
+>>>>>>> main
 		
 		/** Getter et Setter de l'attribut "idRole" **/
 		public function getIdRole(){
@@ -74,7 +111,10 @@
 			$this->idRole = $idRole;
 		}
 		
+<<<<<<< HEAD
+=======
 		
+>>>>>>> main
 		/** Getter et Setter de l'attribut "login" **/
 		public function getLogin(){
 			return $this->login;
@@ -107,6 +147,19 @@
 		// Insertion des valeurs 
 		/** Fonctions CRUD **/
 		public function addUtilisateur() {
+<<<<<<< HEAD
+			
+			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nomComplet, email, adresse, telephone, idRole, login, motDePasse)  
+						VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+			$requete->bindValue(1, $this->getIdUtilisateur());
+			$requete->bindValue(2, $this->getNomComplet());
+			$requete->bindValue(3, $this->getEmail());
+			$requete->bindValue(4, $this->getAdresse());
+			$requete->bindValue(5, $this->getTelephone());
+			$requete->bindValue(6, $this->getIdRole());
+			$requete->bindValue(7, $this->getLogin());
+			$requete->bindValue(8, $this->getMotDePasse());
+=======
 			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nomComplet, email, idRole,  login, motDePasse)  
 						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, $this->getIdUtilisateur());
@@ -115,6 +168,7 @@
 			$requete->bindValue(4, $this->getIdRole());		
 			$requete->bindValue(5, $this->getLogin());
 			$requete->bindValue(6, $this->getMotDePasse());
+>>>>>>> main
 			$res = $requete->execute();
 			return($res);
 		}
@@ -125,6 +179,18 @@
 			else
 				$password = sha1($this->getMotDePasse());
 			
+<<<<<<< HEAD
+			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nomComplet = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
+						');
+			$requete->bindValue(1, $this->getNomComplet());
+			$requete->bindValue(2, $this->getEmail());
+			$requete->bindValue(3, $this->getAdresse());
+			$requete->bindValue(4, $this->getTelephone());
+			$requete->bindValue(5, $this->getIdRole());
+			$requete->bindValue(6, $this->getLogin());
+			$requete->bindValue(7, $password);
+			$requete->bindValue(8, $this->getIdUtilisateur());
+=======
 			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nomComplet = ?, email = ?,  idRole = ?,  login = ?, motDePasse = ? WHERE idUtilisateur = ?
 						');
 			$requete->bindValue(1, $this->getNomComplet());
@@ -133,6 +199,7 @@
 			$requete->bindValue(4, $this->getLogin());
 			$requete->bindValue(5, $password);
 			$requete->bindValue(6, $this->getIdUtilisateur());
+>>>>>>> main
 			$res = $requete->execute(); 
 			return($res);
 		}
@@ -154,9 +221,26 @@
 			return $list;
 		}	
 
+<<<<<<< HEAD
+		// Liste des utilisateurs 
+		public function listUtilisateurApi($debut, $nbrGet){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur order by nomComplet limit $debut, $nbrGet ");
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}	
+
+		public function listRole(){
+			$list = array();
+			$requete = Connexion::Connect()->query('SELECT * FROM role');
+=======
 		public function listRole(){
 			$list = array();
 			$requete = Connexion::Connect()->query('SELECT * FROM role WHERE idRolesalarie > 1');
+>>>>>>> main
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
 				$list[] = $donnee;
@@ -362,7 +446,11 @@
 		public function loginEmployeExist($email, $telephone){ // $login
 	        $list = array();
 	        $requete = Connexion::Connect()->query("SELECT email FROM utilisateur WHERE email = \"$email\" 
+<<<<<<< HEAD
+	        	AND telephone != \"$telephone\"
+=======
 	        	
+>>>>>>> main
 	        ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
@@ -389,6 +477,57 @@
 	         else
 	            return false;    
 	    }
+<<<<<<< HEAD
+			// Liste des employés 
+			public function listEmploye($idEntreprise){
+				$list = array();
+				$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE idEntreprise = $idEntreprise AND idRole IN (2,3) ");
+				//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+				foreach ($requete as $donnee) {
+					$list[] = $donnee;
+				}
+				return $list;
+			}
+			public function listRoleEmploye(){
+				$list = array();
+				$requete = Connexion::Connect()->query('SELECT * FROM role WHERE idRole IN (2,3) ');
+				//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+				foreach ($requete as $donnee) {
+					$list[] = $donnee;
+				}
+				return $list;
+			}
+			public function listClient($idEntreprise){
+				$list = array();
+				$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE idRole = 5 AND idEntreprise = $idEntreprise "); //idEntreprise = $idEntreprise AND
+				//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+				foreach ($requete as $donnee) {
+					$list[] = $donnee;
+				}
+				return $list;
+			}
+
+			public function getAnneeEncours(){
+		    	$list = array();
+		        $requete = Connexion::Connect()->query("SELECT anneeScolaire FROM periode ORDER BY idPeriode DESC LIMIT 0,1 ");
+		        /*On parcours le résultat*/
+		        foreach ($requete as $donnee){
+		            $list[] = $donnee;
+				}
+
+				foreach ($list as $value){
+		            $val = $value['anneeScolaire'];
+				}
+				 if(count($list) != 0){
+		            return $val;
+		        }
+		         else
+		            return false;
+		    }
+	}
+			
+ ?>
+=======
 			
 			
 			
@@ -398,3 +537,4 @@
 	}
 			
  ?>
+>>>>>>> main
