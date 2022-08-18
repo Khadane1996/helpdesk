@@ -6,7 +6,7 @@
 	
 	class Utilisateur {
 		private $idUtilisateur;
-		private $nomComplet;
+		private $nom;
 		private $email;
 
 		private $adresse;
@@ -26,7 +26,7 @@
 			// S'il n'y a pas de paramètre, on initialise les variables à une valeur nulle
 			if ($nb == 0) {
 				$this->idUtilisateur= "";
-				$this->nomComplet= "";
+				$this->nom= "";
 				$this->email= "";
 
 				$this->adresse= "";
@@ -42,7 +42,7 @@
 					La fonction func_get_arg() recupère la valeur de l'argument à la position qui lui est donnée en paramètre*/
 			if ($nb != 0) {
 				$this->idUtilisateur= func_get_arg(0);
-				$this->nomComplet= func_get_arg(1);
+				$this->nom= func_get_arg(1);
 				$this->email= func_get_arg(2);
 
 				$this->adresse= func_get_arg(3);
@@ -67,14 +67,14 @@
 			$this->idUtilisateur = $idUtilisateur;
 		}
 		
-		/** Getter et Setter de l'attribut "nomComplet" **/
-		public function getNomComplet(){
-			return $this->nomComplet;
+		/** Getter et Setter de l'attribut "nom" **/
+		public function getNom(){
+			return $this->nom;
 		}
-		public function setNomComplet($nomComplet){
-			$this->nomComplet = $nomComplet;
+		public function setNom($nom){
+			$this->nom = $nom;
 		}
-		
+	
 		/** Getter et Setter de l'attribut "email" **/
 		public function getEmail(){
 			return $this->email;
@@ -149,10 +149,10 @@
 		public function addUtilisateur() {
 
 			
-			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nomComplet, email, adresse, telephone, idRole, login, motDePasse)  
+			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nom, email, adresse, telephone, idRole, login, motDePasse)  
 						VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, $this->getIdUtilisateur());
-			$requete->bindValue(2, $this->getNomComplet());
+			$requete->bindValue(2, $this->getNom());
 			$requete->bindValue(3, $this->getEmail());
 			$requete->bindValue(4, $this->getAdresse());
 			$requete->bindValue(5, $this->getTelephone());
@@ -160,10 +160,10 @@
 			$requete->bindValue(7, $this->getLogin());
 			$requete->bindValue(8, $this->getMotDePasse());
 
-			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nomComplet, email, idRole,  login, motDePasse)  
+			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nom, email, idRole,  login, motDePasse)  
 						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, $this->getIdUtilisateur());
-			$requete->bindValue(2, $this->getNomComplet());
+			$requete->bindValue(2, $this->getNom());
 			$requete->bindValue(3, $this->getEmail());		
 			$requete->bindValue(4, $this->getIdRole());		
 			$requete->bindValue(5, $this->getLogin());
@@ -180,9 +180,9 @@
 				$password = sha1($this->getMotDePasse());
 			
 
-			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nomComplet = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
+			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
 						');
-			$requete->bindValue(1, $this->getNomComplet());
+			$requete->bindValue(1, $this->getNom());
 			$requete->bindValue(2, $this->getEmail());
 			$requete->bindValue(3, $this->getAdresse());
 			$requete->bindValue(4, $this->getTelephone());
@@ -191,9 +191,9 @@
 			$requete->bindValue(7, $password);
 			$requete->bindValue(8, $this->getIdUtilisateur());
 
-			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nomComplet = ?, email = ?,  idRole = ?,  login = ?, motDePasse = ? WHERE idUtilisateur = ?
+			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nom = ?, email = ?,  idRole = ?,  login = ?, motDePasse = ? WHERE idUtilisateur = ?
 						');
-			$requete->bindValue(1, $this->getNomComplet());
+			$requete->bindValue(1, $this->getNom());
 			$requete->bindValue(2, $this->getEmail());	
 			$requete->bindValue(3, $this->getIdRole());	
 			$requete->bindValue(4, $this->getLogin());
@@ -225,7 +225,7 @@
 		// Liste des utilisateurs 
 		public function listUtilisateurApi($debut, $nbrGet){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur order by nomComplet limit $debut, $nbrGet ");
+			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur order by nom limit $debut, $nbrGet ");
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
 				$list[] = $donnee;
