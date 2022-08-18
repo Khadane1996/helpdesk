@@ -40,7 +40,7 @@
           </li>
           <li class="nav-item">
             <a href="role.php" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-users-cog"></i>
               <p>
                 Role
                 <!-- <span class="right badge badge-danger">New</span> -->

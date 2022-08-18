@@ -300,9 +300,9 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Content</th>
+                    <th>Description</th>
                     <th>Auteur</th>
-                    <th>priorite</th>
+                    <th>Priorité</th>
                     <th>Catégorie</th>
                     <th>Status</th>
                     <th>Assigné à</th>
@@ -377,9 +377,9 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Content</th>
+                    <th>Description</th>
                     <th>Auteur</th>
-                    <th>priorite</th>
+                    <th>Priorité</th>
                     <th>Catégorie</th>
                     <th>Status</th>
                     <th>Assigné à</th>

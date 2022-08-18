@@ -169,55 +169,72 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
+                        <form id="monForm">
+                         
+                          <div class="row">
+                            <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
                               <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Prénom </label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <label for="prenom" class="col-form-label">Prénom</label>
+                                <input required type="text" class="form-control" id="prenom" name="prenom">
                               </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-6 col-sm-6">
                               <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Nom</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <label for="nom" class="col-form-label">Nom</label>
+                                <input required type="text" class="form-control" id="nom" name="nom">
                               </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-6 col-sm-6">
                               <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Login</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <label for="email" class="col-form-label">Email</label>
+                                <input required type="email" class="form-control" id="email" name="email">
                               </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-6 col-sm-6">
                               <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Email</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <label>Role</label>
+                                <select required="" class="form-control select2" style="width: 100%;">
+                                  <!-- <option selected="selected">Alabama</option> -->
+                                  <option value="" selected disabled>-Choisir-</option>
+                                  <?php
+                                    // require_once('php/classe/classeSalarie.php');
+                                    // $Salarie = new Salarie();
+                                    // $list = $Salarie->listSalarie();
+                                    // foreach($list as $value3){
+                                    ?>
+                                      <option value="<?php //echo $value3['idSalarie']; ?>"><?php //echo $value3['matricule']." | ".$value3['nomComplet']; ?></option>
+                                    <?php// }
+                                  ?>
+                                </select>
                               </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-6 col-sm-6">
                               <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="recipient-name">
+                                <label for="login" class="col-form-label">Login</label>
+                                <input type="text" class="form-control" id="login" name="login">
+                              </div>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                              <div class="form-group">
+                                <label for="motDePasse" class="col-form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="motDePasse" name="motDePasse">
+                              </div>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                              <div class="form-group">
+                                <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
+                                <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
                               </div>
                             </div>
                           </div>
                           
-                          
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <button type="button" type="submit" class="btn btn-primary">Créer</button>
+                          </div>
                         </form>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn btn-primary">Créer</button>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
