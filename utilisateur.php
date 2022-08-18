@@ -261,7 +261,15 @@
                     <td>fallou@gmail.com</td> 
                     <td class="project-state">
                             <span class="badge badge-success">Actif</span>
-                    </td>                   
+                    </td>   
+                    <!-- <td>
+                      <div class="form-group">
+                        <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                          <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                          <label class="custom-control-label" for="customSwitch3"></label>
+                        </div>
+                      </div>
+                    </td>                 -->
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">

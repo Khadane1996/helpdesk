@@ -254,14 +254,17 @@
                             <label for="recipient-name" class="col-form-label">Recipient:</label>
                             <input type="text" class="form-control" id="recipient-name">
                           </div>
-                          <td><select class="form-control">
-                            <option selected="selected"> -Choisir agent-</option>
-                            <option> Agent 1</option>
-                            <option> Agent 2</option>
-                            <option> Agent 3</option>
-                          </select></td>
                           <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
+                            <label for="recipient-name" class="col-form-label">Assigné à</label>
+                            <td><select class="form-control">
+                              <option selected="selected"> -Choisir agent-</option>
+                              <option> Agent 1</option>
+                              <option> Agent 2</option>
+                              <option> Agent 3</option>
+                            </select></td>
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="col-form-label">Description</label>
                             <textarea class="form-control" id="message-text"></textarea>
                           </div>
                           
