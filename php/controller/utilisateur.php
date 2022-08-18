@@ -45,7 +45,7 @@
         }
         $res = explode("$", $a);
         //echo $res[0];
-        $sujet = "Reinitialisation de votre mot de passe Gilab MS";
+        $sujet = "Reinitialisation de votre mot de passe ";
         $mailDestinataire = $res[2];
 		// echo $res[2];
         $contenu = "Votre nouveau mot de passe est : ".$res[1];
