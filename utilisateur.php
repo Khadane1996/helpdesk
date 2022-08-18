@@ -249,6 +249,8 @@
                     <th>Login</th>
                     <th>Email</th>
                     <th>Status</th>
+                    <th>Created</th>
+                    <th>Updated</th>
                     <th> </th>
                   </tr>
                   </thead>
@@ -269,7 +271,10 @@
                           <label class="custom-control-label" for="customSwitch3"></label>
                         </div>
                       </div>
-                    </td>                 -->
+                    </td>     
+                              -->
+                    <td>02-08-2022 </td>
+                    <td>02-08-2022 </td>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -298,6 +303,8 @@
                     <td class="project-state">
                             <span class="badge badge-danger">Inactif</span>
                     </td> 
+                    <td>18-08-2022 </td>
+                    <td>18-08-2022 </td>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -324,6 +331,8 @@
                     <th>Login</th>
                     <th>Email</th>
                     <th>Status</th>
+                    <th>Created</th>
+                    <th>Updated</th>
                     <th> </th>
                   </tr>
                   </tfoot>
