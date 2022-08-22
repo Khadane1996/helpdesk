@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="utilisateur.php" class="nav-link">
+            <a href="php/view/utilisateur/liste.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Utilisateurs
@@ -39,7 +39,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="role.php" class="nav-link">
+            <a href="php/view/role/liste.php" class="nav-link">
               <i class="nav-icon fas fa-users-cog"></i>
               <p>
                 Role
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="ticket.php" class="nav-link">
+            <a href="php/view/ticket/liste.php" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
               <p>
                 Tickets
