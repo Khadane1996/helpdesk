@@ -31,7 +31,7 @@
                                 <div class="inner">
                                     <h3>15</h3>
 
-                                    <p>Tickets ouverts</p>
+                                    <p>TICKETS OUVERTS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -47,7 +47,7 @@
                                     <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
                                     <h3>53</h3>
 
-                                    <p>Tickets fermés</p>
+                                    <p>TICKETS FERMÉS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -77,7 +77,7 @@
                                 <div class="inner">
                                     <h3>2</h3>
 
-                                    <p>Agent</p>
+                                    <p>AGENTS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
