@@ -22,7 +22,7 @@
       <a href="index2.html" class="h1"><b>Help</b>Desk</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Connexion</p>
+      <p class="login-box-msg">CONNEXION</p>
 
       <form action="index3.html" method="post">
         <div class="input-group mb-3">
@@ -52,17 +52,17 @@
           </div> -->
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+            <button type="submit" class="btn btn-primary btn-block">SE CONNECTER</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
       <p class="mb-1">
-        <a href="forgot-password.html">J'ai oublié mon mot de passe</a>
+        <a href="forgot-password.html">Mot de passe oublié?</a>
       </p>
       <p class="mb-0">
-        <a href="inscription.php" class="text-center">Créer un compte</a>
+        <a href="inscription.php" class="text-center">Je n'ai pas de compte</a>
       </p>
     </div>
     <!-- /.card-body -->

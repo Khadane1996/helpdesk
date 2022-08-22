@@ -21,7 +21,7 @@
       <a href="index2.html" class="h1"><b>Help</b>Desk</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Inscription</p>
+      <p class="login-box-msg">INSCRIPTION</p>
 
       <form action="index.html" method="post">
         <div class="input-group mb-3">
@@ -76,7 +76,7 @@
           
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+            <button type="submit" class="btn btn-primary btn-block">S'INSCRIRE</button>
           </div>
           <!-- /.col -->
         </div>
