@@ -152,7 +152,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Utilisateurs</h1>
+            <h1>Roles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -163,7 +163,7 @@
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter utilisateur</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ajouter role</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -172,60 +172,13 @@
                         <form id="monForm">
                          
                           <div class="row">
-                            <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
+                            <div class="col-12 col-sm-12"> <!-- col s12 m3 l3  -->
                               <div class="form-group">
-                                <label for="prenom" class="col-form-label">Prénom</label>
-                                <input required type="text" class="form-control" id="prenom" name="prenom">
+                                <label for="libelle" class="col-form-label">Libelle</label>
+                                <input required type="text" class="form-control" id="libelle" name="libelle">
                               </div>
                             </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="nom" class="col-form-label">Nom</label>
-                                <input required type="text" class="form-control" id="nom" name="nom">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="email" class="col-form-label">Email</label>
-                                <input required type="email" class="form-control" id="email" name="email">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label>Role</label>
-                                <select required="" class="form-control select2" style="width: 100%;">
-                                  <!-- <option selected="selected">Alabama</option> -->
-                                  <option value="" selected disabled>-Choisir-</option>
-                                  <?php
-                                    // require_once('php/classe/classeSalarie.php');
-                                    // $Salarie = new Salarie();
-                                    // $list = $Salarie->listSalarie();
-                                    // foreach($list as $value3){
-                                    ?>
-                                      <option value="<?php //echo $value3['idSalarie']; ?>"><?php //echo $value3['matricule']." | ".$value3['nomComplet']; ?></option>
-                                    <?php// }
-                                  ?>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="login" class="col-form-label">Login</label>
-                                <input type="text" class="form-control" id="login" name="login">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="motDePasse" class="col-form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="motDePasse" name="motDePasse">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
-                                <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
-                              </div>
-                            </div>
+                            
                           </div>
                           
                           <div class="modal-footer">
@@ -254,74 +207,23 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Gestion des utilisateurs</h3>
+                <h3 class="card-title">Gestion des roles</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Login</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Created</th>
-                    <th>Updated</th>
-                    <th> </th>
+                    <th>&#8470;</th>
+                    <th>Libellé</th>
                   </tr>
                   </thead>
                   <tbody>
-                  
+                  <?php 
+                    $i = 1;
+                   ?>
                   <tr>
-                    <td>Mbaye</td>
-                    <td>Fallou</td>
-                    <td>fallou_mbaye</td>
-                    <td>fallou@gmail.com</td> 
-                    <td class="project-state">
-                            <span class="badge badge-success">Actif</span>
-                    </td>   
-                    <!-- <td>
-                      <div class="form-group">
-                        <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                          <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                          <label class="custom-control-label" for="customSwitch3"></label>
-                        </div>
-                      </div>
-                    </td>     
-                              -->
-                    <td>02-08-2022 </td>
-                    <td>02-08-2022 </td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-eye">
-                              </i>
-                              Voir
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Modifier
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Supprimer
-                          </a>
-                    </td>
-
-                  </tr>
-                  
-                  <tr>
-                    <td>Fall</td>
-                    <td>Abdou</td>
-                    <td>abdou_fall</td>
-                    <td>abdou@gmail.com</td>
-                    <td class="project-state">
-                            <span class="badge badge-danger">Inactif</span>
-                    </td> 
-                    <td>18-08-2022 </td>
-                    <td>18-08-2022 </td>
+                    <td><?php echo $i++; ?></td>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -343,14 +245,8 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Login</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Created</th>
-                    <th>Updated</th>
-                    <th> </th>
+                    <th>&#8470;</th>
+                    <th>Libellé</th>      
                   </tr>
                   </tfoot>
                 </table>
