@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HelpDesk | Utilisateur</title>
+  <title>HelpDesk | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -224,6 +224,171 @@
                         </div>
                         <!-- ./col -->
                     </div>
+                    <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Metrics</h3>
+
+                <!-- <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap">
+                  <!-- <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  </thead> -->
+                  <tbody>
+                    <tr>
+                      <td><b>Top Severity Counts</b></td>
+                      <td><ul style="list-style-type:none;">
+                        <li><a href="#">7 No work around</a></li>
+                        <li><a href="#">6 Work around exists</a></li>
+                        <li><a href="#">2 Production Down System</a></li>
+                      </ul></td>                  
+                    </tr>
+                    <tr>
+                      <td><b>Top Urgency Count</b></td>
+                      <td><ul style="list-style-type:none;">
+                        <li><a href="#">6 Hautes</a></li>
+                        <li><a href="#">5 Basses</a></li>
+                        <li><a href="#">4 Moyennes</a></li>
+                      </ul></td>                   
+                    </tr>
+                    <tr>
+                      <td><b>Top Status Codes</b></td>
+                      <td><ul style="list-style-type:none;">
+                        <li><a href="#">13 Ouverts</a></li>
+                        <li><a href="#">8 Fermés</a></li>  
+                      </ul></td>        
+                    </tr>
+                    <tr>
+                      <td><b>Top Products</b></td>
+                      <td><ul style="list-style-type:none;">
+                        <li><a href="#">11 Alpha Analytics Accelerator</a></li>
+                        <li><a href="#">3 Sanity Testing Services Inc</a></li>
+                        <li><a href="#">1 Butler Bussiness Barcodes</a></li>
+                      </ul></td>                   
+                    </tr>
+      
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+       
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Tickets ouverts par agent</h3>
+
+                <!-- <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>User</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>134</td>
+                      <td>Jim Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>494</td>
+                      <td>Victoria Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>832</td>
+                      <td>Michael Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>982</td>
+                      <td>Rocky Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
                 </div>
       </section>
       <!-- /.content -->

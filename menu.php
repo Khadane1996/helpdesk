@@ -59,7 +59,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-cog"></i>
               <p>
                 Paramètres
                 <!-- <span class="right badge badge-danger">New</span> -->
