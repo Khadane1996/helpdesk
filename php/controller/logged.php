@@ -19,7 +19,6 @@
 			$_SESSION['helpdesknom'] = $infos[0]['nom'];
 			$_SESSION['helpdeskprenom'] = $infos[0]['prenom'];
 			$_SESSION['helpdesktelephone'] = $infos[0]['telephone'];
-			$_SESSION['helpdeskrole'] = $infos[0]['role'];
 			$_SESSION['helpdeskidRole'] = $infos[0]['idRole'];
 		
 			
