@@ -207,21 +207,7 @@
 				$list[] = $donnee;
 			}
 			return $list;
-		}	
-
-
-		// Liste des utilisateurs 
-		public function listUtilisateurApi($debut, $nbrGet){
-			$list = array();
-			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur order by nom limit $debut, $nbrGet ");
-			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
-			foreach ($requete as $donnee) {
-				$list[] = $donnee;
-			}
-			return $list;
-		}	
-
-		
+		}
 
 		public function listRole(){
 			$list = array();
@@ -233,91 +219,6 @@
 			}
 			return $list;
 		}
-
-		public function updateProfile($login, $ancienMotDePasse, $nouveauMotDePasse) {
-			$db = Connexion::Connect();
-			try {  			
-				$db->beginTransaction();
-
-				$requete1 = $db->prepare('UPDATE utilisateur SET motDePasse = ? WHERE login = ? AND motDePasse = ?');
-				
-				$requete1->bindValue(1, sha1($nouveauMotDePasse));
-				$requete1->bindValue(2, $login);
-				$requete1->bindValue(3, sha1($ancienMotDePasse));
-				$res1 = $requete1->execute();
-
-				$db->commit();
-				return $res1;
-			} catch (Exception $e) {
-			  $db->rollBack();
-			  echo "Failed: " . $e->getMessage();
-			}
-		}
-
-
-		public function changeState($id, $etat) {
-			$db = Connexion::Connect();
-			try {  			
-				$db->beginTransaction();
-				$requete = $db->prepare('UPDATE utilisateur SET etat = ? WHERE idUtilisateur = ? ');
-				$requete->bindValue(1, $etat);
-				$requete->bindValue(2, $id);
-				$res = $requete->execute(); 
-
-				//
-				$requete = $db->prepare('INSERT INTO histocompte(idHistocompte, idUtilisateur, action) VALUES (?, ?, ?)');
-				$requete->bindValue(1, NULL);
-				$requete->bindValue(2, $id);
-				$requete->bindValue(3, $etat);
-				$res = $requete->execute();
-
-				$db->commit();
-				return $res;
-			} catch (Exception $e) {
-			  $db->rollBack();
-			  echo "Failed: " . $e->getMessage();
-			}
-		}
-
-		public function resetPassword($id) {
-			$db = Connexion::Connect();
-			try {  			
-				$db->beginTransaction();
-
-				$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET motDePasse = ? WHERE idUtilisateur = ? ');
-				$mdp = $this->random_password(8);
-				$requete->bindValue(1, sha1($mdp));
-				$requete->bindValue(2, $id);
-				$res = $requete->execute();
-
-
-				$list = array();
-	
-				$requete1 = $db->query("SELECT email FROM utilisateur WHERE idUtilisateur = \"$id\" ");;
-				$email = "";
-				/*$requete1->bindValue(1, $id);
-				$res1 = $requete1->execute();*/
-
-				foreach ($requete1 as $donnee) {
-					$list[] = $donnee;
-				}
-
-				foreach ($list as $value) {
-					$email = $value['email'];
-				}
-
-				$db->commit();
-				// return $res1;
-				if($res == 1)
-					return "1$".$mdp."$".$email;
-				else
-					return($res);
-			} catch (Exception $e) {
-			  $db->rollBack();
-			  echo "Failed: " . $e->getMessage();
-			}
-		}
-
 
 		public function emailExist($email){
 	        $list = array();
@@ -448,68 +349,7 @@
 	         else
 	            return false;    
 	    }
-		public function loginEmployeExist2($email, $idUtilisateur){ // $login
-	        $list = array();
-	        $requete = Connexion::Connect()->query("SELECT email FROM utilisateur WHERE email = \"$email\" 
-	        	AND idUtilisateur != \"$idUtilisateur\"
-	        ");
-	        /*On parcours le résultat*/
-	        foreach ($requete as $donnee){
-	            $list[] = $donnee;
-			}
-			 if(count($list) != 0){
-	            return true;
-	        }
-	         else
-	            return false;    
-	    }
-
-			// Liste des employés 
-			public function listEmploye($idEntreprise){
-				$list = array();
-				$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE idEntreprise = $idEntreprise AND idRole IN (2,3) ");
-				//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
-				foreach ($requete as $donnee) {
-					$list[] = $donnee;
-				}
-				return $list;
-			}
-			public function listRoleEmploye(){
-				$list = array();
-				$requete = Connexion::Connect()->query('SELECT * FROM role WHERE idRole IN (2,3) ');
-				//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
-				foreach ($requete as $donnee) {
-					$list[] = $donnee;
-				}
-				return $list;
-			}
-			public function listClient($idEntreprise){
-				$list = array();
-				$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE idRole = 5 AND idEntreprise = $idEntreprise "); //idEntreprise = $idEntreprise AND
-				//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
-				foreach ($requete as $donnee) {
-					$list[] = $donnee;
-				}
-				return $list;
-			}
-
-			public function getAnneeEncours(){
-		    	$list = array();
-		        $requete = Connexion::Connect()->query("SELECT anneeScolaire FROM periode ORDER BY idPeriode DESC LIMIT 0,1 ");
-		        /*On parcours le résultat*/
-		        foreach ($requete as $donnee){
-		            $list[] = $donnee;
-				}
-
-				foreach ($list as $value){
-		            $val = $value['anneeScolaire'];
-				}
-				 if(count($list) != 0){
-		            return $val;
-		        }
-		         else
-		            return false;
-		    }
+		
 	}
 			
  ?>
