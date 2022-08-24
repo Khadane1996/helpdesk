@@ -34,6 +34,7 @@
 				$_SESSION['helpdesksimple'] = true;
 				echo 3;
 			}
+			
 
 			
 		}else{

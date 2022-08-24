@@ -194,17 +194,17 @@
                               <div class="form-group">
                                 <label>Role</label>
                                 <select required="" class="form-control select2" style="width: 100%;">
-                                  <!-- <option selected="selected">Alabama</option> -->
+                      
                                   <option value="" selected disabled>-Choisir-</option>
-                                  <?php
-                                    // require_once('php/classe/classeSalarie.php');
-                                    // $Salarie = new Salarie();
-                                    // $list = $Salarie->listSalarie();
-                                    // foreach($list as $value3){
+                                    <?php 
+                                        require_once('../../../php/classe/classeUtilisateur.php');
+                                        $Utilisateur = new Utilisateur();
+                                        $list = $Utilisateur->listRole();
+                                        foreach($list as $value){
                                     ?>
-                                      <option value="<?php //echo $value3['idSalarie']; ?>"><?php //echo $value3['matricule']." | ".$value3['nomComplet']; ?></option>
-                                    <?php// }
-                                  ?>
+                                  <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
+                                    <?php }
+                                    ?>
                                 </select>
                               </div>
                             </div>
@@ -261,37 +261,34 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
+                    <th>&#8470;</th>
+                    <th>Prénom & Nom</th>
                     <th>Login</th>
                     <th>Email</th>
                     <th>Status</th>
-                    <th>Created</th>
-                    <th>Updated</th>
-                    <th> </th>
+                    <th>Option</th>
                   </tr>
                   </thead>
                   <tbody>
                   
                   <tr>
-                    <td>Mbaye</td>
-                    <td>Fallou</td>
-                    <td>fallou_mbaye</td>
-                    <td>fallou@gmail.com</td> 
+                    <?php 
+                      require_once('../../../php/classe/classeUtilisateur.php');
+                      $Utilisateur = new Utilisateur();
+                      $list = $Utilisateur->listUtilisateur();
+                      $i = 1;
+                      foreach($list as $value){
+                    ?>
+                    <td><?php echo $i++; ?></td>
+                    <td><?php echo $value['prenom']." " .$value['nom'] ?> </td>
+                    <td><?php echo $value['login'] ?></td>
+                    <td><?php echo $value['email'] ?></td>
+
+              
                     <td class="project-state">
                             <span class="badge badge-success">Actif</span>
                     </td>   
-                    <!-- <td>
-                      <div class="form-group">
-                        <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                          <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                          <label class="custom-control-label" for="customSwitch3"></label>
-                        </div>
-                      </div>
-                    </td>     
-                              -->
-                    <td>02-08-2022 </td>
-                    <td>02-08-2022 </td>
+
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -311,46 +308,17 @@
                     </td>
 
                   </tr>
+                  <?php 
+                    }
+                   ?>
                   
-                  <tr>
-                    <td>Fall</td>
-                    <td>Abdou</td>
-                    <td>abdou_fall</td>
-                    <td>abdou@gmail.com</td>
-                    <td class="project-state">
-                            <span class="badge badge-danger">Inactif</span>
-                    </td> 
-                    <td>18-08-2022 </td>
-                    <td>18-08-2022 </td>
-                    <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-eye">
-                              </i>
-                              Voir
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Modifier
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Supprimer
-                          </a>
-                    </td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
+
+                    <th>&#8470;</th>
+                    <th>Prénom & Nom</th>
                     <th>Login</th>
                     <th>Email</th>
                     <th>Status</th>
-                    <th>Created</th>
-                    <th>Updated</th>
-                    <th> </th>
+                    <th>Option</th>
                   </tr>
                   </tfoot>
                 </table>
