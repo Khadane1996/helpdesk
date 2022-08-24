@@ -349,18 +349,18 @@
 	         else
 	            return false;    
 	    }
+
+		public function addRole($libelle) {
+
+			
+			$requete = Connexion::Connect()->prepare('INSERT INTO role(idRole, libelle)  
+						VALUES (?, ?)');
+			$requete->bindValue(1, NULL);
+			$requete->bindValue(2, $libelle);
+			$res = $requete->execute();
+			return($res);
+		}
 		
 	}
 			
  ?>
-
-			
-			
-			
-			
-
-		
-	}
-			
- ?>
-
