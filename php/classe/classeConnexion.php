@@ -4,8 +4,6 @@
 
     class Connexion{
 
-
-
         public static function Connect(){
 
             $conn = NULL;
@@ -14,15 +12,9 @@
 
                 /*On essaie d'etablir la connexion*/ 
 
-
-                    $conn = new PDO("mysql:host=localhost;dbname=hepldesk", "root", "");
-
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                $conn = new PDO("mysql:host=localhost;dbname=helpdesk", "root", " ");
+                $conn = new PDO("mysql:host=localhost;dbname=helpdesk", "root", "");
 
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 
                 } catch(PDOException $e){
 
@@ -38,7 +30,4 @@
 
     }
 
-
 ?>
-
-
