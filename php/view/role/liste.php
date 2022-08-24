@@ -109,7 +109,7 @@
                       <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                          <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                          <img src="../../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                           <div class="media-body">
                             <h3 class="dropdown-item-title">
                               Nora Silvester
@@ -186,7 +186,7 @@
                           <input type="hidden" name="ajouter">
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn btn-primary">Créer</button>
+                            <button type="submit" class="btn btn-primary" name="action">Créer</button>
                           </div>
                         </form>
                       </div>
@@ -289,47 +289,11 @@
     include('../../../footer.php');
   ?>
   <!-- Include footer fin -->
-<script type="text/javascript" src="php/view/role/role.js"></script>
+<script type="text/javascript" src="role.js"></script>
 <!-- ./wrapper -->
 
 <script type="text/javascript">
-  $('#monForm').on('submit', function(e) {
-        e.preventDefault(); 
-        $('.loaderMessage').addClass('is-active');
-        $.ajax({
-            type: "POST",
-            url: "php/controller/role.php", //process to mail
-            data: $(this).serialize(),
-            success: function(msg){
-                if(parseInt(msg)==1){
-                    // M.toast({html: '<span style="color:#fff;"></span>'}, 3000);
-                    swal("Ok", "Les informations sur l'inscription ont été ajouté avec succès", 'success');
-                    $(document).click(function(){
-                        // window.location.href = "creche_liste";
-                        $("#form1").css("display", "none");
-                        $("input[name=form1]").attr("required", false);
+  
+  
 
-                        $("#form2").css("display", "block");
-                        $("input[name=form2]").attr("required", true);
-                        var anneeScolaire = document.getElementById("anneeScolaire").value;
-                        $("#anneeScolaire2").val(anneeScolaire);
-                    });
-                }else if(parseInt(msg)==-2){ 
-                    M.toast({html: '<span style="color:#fff;">Un creche avec le m&ecirc;me code affaire existe déj&agrave;</span>'}, 3000);
-                }else if(parseInt(msg)==-3){ 
-                    M.toast({html: '<span style="color:#fff;">Un creche avec le m&ecirc;me libellé existe déj&agrave;</span>'}, 3000);
-                }else if(parseInt(msg)==99){ 
-                    M.toast({html: '<span style="color:#fff;">Cette classe doit avoir au minimum un horaire pour le choix de l\'inscription;</span>'}, 3000);
-                }else{ 
-                    swal("Désolé", "Une erreur est survenue lors de la connexion à la base de données, veuillez réessayer plus tard", 'error');
-                }
-            // alert(msg);
-            $('.loaderMessage').removeClass('is-active');
-            },
-            error: function(){
-                $('.loaderMessage').removeClass('is-active');
-                swal({ title: "Désolé", text: "Une erreur est survenue veuillez contacter l'administrateur", imageUrl: 'images/icones/error.png', html: true});
-            }
-        });
-    });
 </script>
