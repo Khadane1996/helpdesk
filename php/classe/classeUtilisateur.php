@@ -211,7 +211,7 @@
 
 		public function listRole(){
 			$list = array();
-			$requete = Connexion::Connect()->query('SELECT * FROM role WHERE idRole > 1');
+			$requete = Connexion::Connect()->query("SELECT libelle FROM role");
 
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
