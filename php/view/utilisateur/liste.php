@@ -266,6 +266,7 @@
                     <th>Login</th>
                     <th>Email</th>
                     <th>Status</th>
+                    <!-- <th>Profil</th> -->
                     <th>Option</th>
                   </tr>
                   </thead>
@@ -283,12 +284,10 @@
                     <td><?php echo $value['prenom']." " .$value['nom'] ?> </td>
                     <td><?php echo $value['login'] ?></td>
                     <td><?php echo $value['email'] ?></td>
-
-              
                     <td class="project-state">
                             <span class="badge badge-success">Actif</span>
                     </td>   
-
+                    <!-- <td><?php echo $value['idRole'] ?></td> -->
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -318,6 +317,7 @@
                     <th>Login</th>
                     <th>Email</th>
                     <th>Status</th>
+                    <!-- <th>Profil</th> -->
                     <th>Option</th>
                   </tr>
                   </tfoot>
