@@ -12,10 +12,6 @@
 
                 /*On essaie d'etablir la connexion*/ 
 
-
-
-                $conn = new PDO("mysql:host=localhost;dbname=helpdesk", "root", " ");
-
                 $conn = new PDO("mysql:host=localhost;dbname=helpdesk", "root", "");
 
 
