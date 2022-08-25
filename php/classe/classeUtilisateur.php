@@ -189,12 +189,13 @@
 			return($res);
 		}
 		// Suppression des valeurs
-		public function deleteUtilisateur($code) {
+		public function deleteUtilisateur($code){
 			$requete = Connexion::Connect()->prepare('DELETE FROM utilisateur  WHERE idUtilisateur = ?');
 			$requete->bindValue(1, $code);
 			$res = $requete->execute();
 			return($res);
 		}
+		
 		// Liste des utilisateurs 
 		public function listUtilisateur(){
 			$list = array();
@@ -365,6 +366,3 @@
 			
 
  ?>
-
-			
-

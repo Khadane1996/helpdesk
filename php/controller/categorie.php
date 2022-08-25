@@ -1,5 +1,5 @@
 <?php
-    @session_start();
+    // @session_start();
     // require_once("functions.php");
     
 
@@ -22,7 +22,10 @@
         echo $Categorie->addCategorie($_POST['libelle']);
     }
     else if(isset($_POST['modifier'])){
-       
+        require_once('../classe/classeCategorie.php');
+        $Categorie = new Categorie();
+
+        echo $Categorie->updateCategorie($_POST['modifier'], $_POST['libelle']);
     }else{
         echo 2;
     }

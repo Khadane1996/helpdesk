@@ -65,7 +65,7 @@
 		// Liste des categories
 		public function listCategorie(){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT libelle FROM categorie");
+			$requete = Connexion::Connect()->query("SELECT * FROM categorie");
 
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
@@ -74,12 +74,23 @@
 			return $list;
 		}
 
-		
+		public function deleteCategorie($code) {
+			$requete = Connexion::Connect()->prepare('DELETE FROM categorie WHERE idCategorie = ?');
+			$requete->bindValue(1, $code);
+			$res = $requete->execute();
+			return($res);
+		}
+
+		// Modification des valeurs
+		public function updateCategorie($idCategorie,$libelle) {
+			$requete = Connexion::Connect()->prepare('UPDATE categorie SET libelle = ? WHERE idCategorie = ?
+						');
+			$requete->bindValue(1, $libelle);
+			$requete->bindValue(2, $idCategorie);
+			$res = $requete->execute(); 
+			return($res);
+		}
 		
 	}
 			
-
  ?>
-
-			
-

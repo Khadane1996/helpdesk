@@ -162,38 +162,7 @@
               <!-- <li><button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-plus"></i> ajouter</button></li> -->
               <li>
                 <button type="button" class="btn btn-outline-primary btn-block btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="@mdo"><i class="fa fa-plus"></i> ajouter</button>
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter catégorie</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form id="monForm">
-                         
-                          <div class="row">
-                            <div class="col-12 col-sm-12"> <!-- col s12 m3 l3  -->
-                              <div class="form-group">
-                                <label for="libelle" class="col-form-label">Libelle</label>
-                                <input required type="text" class="form-control" id="libelle" name="libelle">
-                              </div>
-                            </div>
-                            
-                          </div>
-                          <input type="hidden" name="ajouter">
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn btn-primary" name="action">Créer</button>
-                          </div>
-                        </form>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
+                
               </li>
             </ol>
           </div>
@@ -219,7 +188,7 @@
                   <tr>
                     <th>&#8470;</th>
                     <th>Libellé</th>
-                    <th>Option</th>
+                    <th class="text-right">Option</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -233,22 +202,22 @@
                    ?>
                    
                   <tr>
-                    <td><?php echo $i++; ?></td>
+                    <td class="project-actions text-right"><?php echo $i++; ?></td>
                     <th><?php echo $value['libelle'] ?></th>
                     <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
+                          <!-- <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
                               </i>
                               Voir
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
+                          </a> -->
+                          <a onclick="modifier('<?php echo $value['libelle'] ?>','<?php echo $value['idCategorie'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                              <!-- <i class="fas fa-pencil-alt">
+                              </i> -->
                               Modifier
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
+                          <a onclick="supprimer('<?php echo $value['idCategorie'] ?>')" class="btn btn-danger btn-sm" href="#">
+                              <!-- <i class="fas fa-trash">
+                              </i> -->
                               Supprimer
                           </a>
                     </td>
@@ -262,7 +231,7 @@
                   <tr>
                     <th>&#8470;</th>
                     <th>Libellé</th>
-                    <th>Option</th>      
+                    <th class="text-right">Option</th>      
                   </tr>
                   </tfoot>
                 </table>
@@ -278,6 +247,75 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+    <!-- Début modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter catégorie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="monForm">
+              
+              <div class="row">
+                <div class="col-12 col-sm-12"> <!-- col s12 m3 l3  -->
+                  <div class="form-group">
+                    <label for="libelle" class="col-form-label">Libelle</label>
+                    <input required type="text" class="form-control" id="libelle" name="libelle">
+                  </div>
+                </div>
+                
+              </div>
+              <input type="hidden" name="ajouter">
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" name="action">Créer</button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modifier catégorie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="monFormMod">
+              
+              <div class="row">
+                <div class="col-12 col-sm-12"> <!-- col s12 m3 l3  -->
+                  <div class="form-group">
+                    <label for="libelle" class="col-form-label">Libelle</label>
+                    <input required type="text" class="form-control" id="libelle2" name="libelle">
+                  </div>
+                </div>
+                
+              </div>
+              <input type="hidden" id="modifier" name="modifier">
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" name="action">Créer</button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Fin modal -->
+
   </div>
   <!-- /.content-wrapper -->
 
@@ -294,6 +332,52 @@
 
 <script type="text/javascript">
   
-  
+  function supprimer(idElement){
+    Swal.fire({
+      title: 'Êtes vous sur?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          $.ajax({
+              type: "GET",
+              url: "../../controller/categorie.php?supprimer="+idElement, 
+              data: $(this).serialize(),
+              success: function(msg){
+                  if(parseInt(msg)==1){
+                    Swal.fire(
+                      'Supprimé!',
+                      'Votre fichier a été supprimé.',
+                      'success'
+                    )
+                    location.reload();
+                  }else{ 
+                    // Swal.fire(
+                    //   'Deleted!',
+                    //   'Your file has been deleted.',
+                    //   'success'
+                    // )
+                  }
+              },
+              error: function(){
+                  // Swal.fire(
+                  //   'Deleted!',
+                  //   'Your file has been deleted.',
+                  //   'success'
+                  // )
+              }
+          });
+      }
+    })
+  }
+
+  function modifier(libelle,idElement){
+    $("#libelle2").val(libelle);
+    $("#modifier").val(idElement);
+  }
 
 </script>
