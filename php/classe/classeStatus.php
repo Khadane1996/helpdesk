@@ -50,10 +50,8 @@
 		
 
 
-
+		// Ajout de status
 		public function addStatus($libelle) {
-
-			
 			$requete = Connexion::Connect()->prepare('INSERT INTO status(idStatus, libelle)  
 						VALUES (?, ?)');
 			$requete->bindValue(1, NULL);
@@ -72,6 +70,14 @@
 				$list[] = $donnee;
 			}
 			return $list;
+		}
+
+		// Suppression des valeurs
+		public function deleteStatus($code) {
+			$requete = Connexion::Connect()->prepare('DELETE FROM status  WHERE idStatus = ?');
+			$requete->bindValue(1, $code);
+			$res = $requete->execute();
+			return($res);
 		}
 
 		

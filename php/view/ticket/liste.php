@@ -43,44 +43,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -183,19 +145,6 @@
     include('../../../menu.php');
   ?>
   <!-- Include menu fin -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -306,8 +255,8 @@
                     <th>Catégorie</th>
                     <th>Status</th>
                     <th>Assigné à</th>
-                    <th>Created</th>
-                    <th>Updated</th>
+                    <!-- <th>Created</th>
+                    <th>Updated</th> -->
                     <th> </th>
                   </tr>
                   </thead>
@@ -322,8 +271,8 @@
                             <span class="badge badge-success">Ouvert</span>
                       </td>
                       <td> Agent 1 </td>
-                      <td> 1 semaine </td>
-                      <td> 1 semaine </td>
+                      <!-- <td> 1 semaine </td>
+                      <td> 1 semaine </td> -->
                       <td class="project-actions text-right">
                             <a class="btn btn-primary btn-sm" href="#">
                                 <i class="fas fa-eye">
@@ -353,8 +302,8 @@
                             <span class="badge badge-danger">Fermé</span>
                         </td>
                         <td> Agent 2 </td>
-                        <td> 2 semaines </td>
-                        <td> 2 semaines </td>
+                        <!-- <td> 2 semaines </td>
+                        <td> 2 semaines </td> -->
                        <td class="project-actions text-right">
                             <a class="btn btn-primary btn-sm" href="#">
                                 <i class="fas fa-eye">
@@ -383,8 +332,8 @@
                     <th>Catégorie</th>
                     <th>Status</th>
                     <th>Assigné à</th>
-                    <th>Created</th>
-                    <th>Updated</th>
+                    <!-- <th>Created</th>
+                    <th>Updated</th> -->
                     <th> </th>
                   </tr>
                   </tfoot>
