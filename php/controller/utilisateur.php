@@ -79,7 +79,7 @@
         $motDePasse = sha1($_POST['motDePasse']);
         if ($Utilisateur->emailExist($_POST['email']) == false && $Utilisateur->loginExist($_POST['login']) == false) {
             
-            $Utilisateur = new Utilisateur(NULL, $_POST['nomComplet'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $motDePasse);
+            $Utilisateur = new Utilisateur(NULL, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $motDePasse);
             echo $Utilisateur->addUtilisateur();
 
         }

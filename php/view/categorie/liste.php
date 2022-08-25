@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HelpDesk | Utilisateur</title>
+  <title>HelpDesk | Catégorie</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,6 +36,9 @@
 
     <!-- Toastr -->
     <link rel="stylesheet" href="../../../plugins/toastr/toastr.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -106,7 +109,7 @@
                       <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                          <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                          <img src="../../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                           <div class="media-body">
                             <h3 class="dropdown-item-title">
                               Nora Silvester
@@ -152,7 +155,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Utilisateurs</h1>
+            <h1>Catégories</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -163,7 +166,7 @@
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter utilisateur</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ajouter catégorie</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -172,65 +175,18 @@
                         <form id="monForm">
                          
                           <div class="row">
-                            <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
+                            <div class="col-12 col-sm-12"> <!-- col s12 m3 l3  -->
                               <div class="form-group">
-                                <label for="prenom" class="col-form-label">Prénom</label>
-                                <input required type="text" class="form-control" id="prenom" name="prenom">
+                                <label for="libelle" class="col-form-label">Libelle</label>
+                                <input required type="text" class="form-control" id="libelle" name="libelle">
                               </div>
                             </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="nom" class="col-form-label">Nom</label>
-                                <input required type="text" class="form-control" id="nom" name="nom">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="email" class="col-form-label">Email</label>
-                                <input required type="email" class="form-control" id="email" name="email">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label>Role</label>
-                                <select required="" class="form-control select2" style="width: 100%;" name="idRole">
-                      
-                                  <option value="" selected disabled>-Choisir-</option>
-                                    <?php 
-                                        require_once('../../../php/classe/classeUtilisateur.php');
-                                        $Utilisateur = new Utilisateur();
-                                        $list = $Utilisateur->listRole();
-                                        foreach($list as $value){
-                                    ?>
-                                  <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
-                                    <?php }
-                                    ?>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="login" class="col-form-label">Login</label>
-                                <input type="text" class="form-control" id="login" name="login">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="motDePasse" class="col-form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="motDePasse" name="motDePasse">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
-                                <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
-                              </div>
-                            </div>
+                            
                           </div>
-                          
+                          <input type="hidden" name="ajouter">
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <button type="button" type="submit" class="btn btn-primary">Créer</button>
+                            <button type="submit" class="btn btn-primary" name="action">Créer</button>
                           </div>
                         </form>
                       </div>
@@ -254,7 +210,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Gestion des utilisateurs</h3>
+                <h3 class="card-title">Gestion des catégories</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -262,32 +218,23 @@
                   <thead>
                   <tr>
                     <th>&#8470;</th>
-                    <th>Prénom & Nom</th>
-                    <th>Login</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <!-- <th>Profil</th> -->
+                    <th>Libellé</th>
                     <th>Option</th>
                   </tr>
                   </thead>
                   <tbody>
-                  
+
+                  <?php 
+                    require_once('../../../php/classe/classeCategorie.php');
+                    $Categorie = new Categorie();
+                    $list = $Categorie->listCategorie();
+                    $i = 1;
+                    foreach($list as $value){
+                   ?>
+                   
                   <tr>
-                    <?php 
-                      require_once('../../../php/classe/classeUtilisateur.php');
-                      $Utilisateur = new Utilisateur();
-                      $list = $Utilisateur->listUtilisateur();
-                      $i = 1;
-                      foreach($list as $value){
-                    ?>
                     <td><?php echo $i++; ?></td>
-                    <td><?php echo $value['prenom']." " .$value['nom'] ?> </td>
-                    <td><?php echo $value['login'] ?></td>
-                    <td><?php echo $value['email'] ?></td>
-                    <td class="project-state">
-                            <span class="badge badge-success">Actif</span>
-                    </td>   
-                    <!-- <td><?php echo $value['idRole'] ?></td> -->
+                    <th><?php echo $value['libelle'] ?></th>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -305,20 +252,17 @@
                               Supprimer
                           </a>
                     </td>
-
                   </tr>
                   <?php 
                     }
                    ?>
-                  
+                  </tbody>
 
+                  <tfoot>
+                  <tr>
                     <th>&#8470;</th>
-                    <th>Prénom & Nom</th>
-                    <th>Login</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <!-- <th>Profil</th> -->
-                    <th>Option</th>
+                    <th>Libellé</th>
+                    <th>Option</th>      
                   </tr>
                   </tfoot>
                 </table>
@@ -341,10 +285,15 @@
 
 
    <!-- Include footer début -->
-   <?php
+  <?php
     include('../../../footer.php');
   ?>
   <!-- Include footer fin -->
-
-
+<script type="text/javascript" src="categorie.js"></script>
 <!-- ./wrapper -->
+
+<script type="text/javascript">
+  
+  
+
+</script>

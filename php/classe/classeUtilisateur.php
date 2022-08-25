@@ -150,10 +150,9 @@
 		// Insertion des valeurs 
 		/** Fonctions CRUD **/
 		public function addUtilisateur() {
-
 			
-			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, nom, email, adresse, telephone, idRole, login, motDePasse)  
-						VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, adresse, telephone, idRole, login, motDePasse)  
+						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, $this->getIdUtilisateur());
 			$requete->bindValue(2, $this->getPrenom());
 			$requete->bindValue(3, $this->getNom());
@@ -163,8 +162,6 @@
 			$requete->bindValue(7, $this->getIdRole());
 			$requete->bindValue(8, $this->getLogin());
 			$requete->bindValue(9, $this->getMotDePasse());
-
-
 			$res = $requete->execute();
 			return($res);
 		}
@@ -361,6 +358,8 @@
 			$res = $requete->execute();
 			return($res);
 		}
+
+		
 		
 	}
 			
