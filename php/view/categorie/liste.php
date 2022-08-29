@@ -306,7 +306,7 @@
               <input type="hidden" id="modifier" name="modifier">
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary" name="action">Créer</button>
+                <button type="submit" class="btn btn-primary" name="action">Appliquer changement</button>
               </div>
             </form>
           </div>

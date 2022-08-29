@@ -173,13 +173,20 @@
                       <div class="modal-body">
                         <form>
                           <div class="form-group">
-                            <div class="col-12 col-sm-6">
+                            <div class="col-6 col-sm-6">
                               <div class="form-group">
                                 <label>Catégorie</label>
-                                <select class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" required>
-                                  <option selected="selected">-Choisir catégorie-</option>
-                                  <option>Logicielle</option>
-                                  <option>Matérielle</option>   
+                                <select required="" class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" id="idRole" name="idRole">
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeCategorie.php');
+                                          $Categorie = new Categorie();
+                                          $list = $Categorie->listCategorie();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idCategorie'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
                                 </select>
                               </div>
                               <!-- /.form-group -->
@@ -189,34 +196,49 @@
                             <div class="col-12 col-sm-6">
                               <div class="form-group">
                                 <label>Priorité</label>
-                                <select class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" required>
-                                  <option selected="selected">-Choisir priorité-</option>
-                                  <option>Haute</option>
-                                  <option>Moyenne</option>  
-                                  <option>Basse</option>  
+                                <select required="" class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" id="idRole" name="idRole">
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classePriorite.php');
+                                          $Priorite = new Priorite();
+                                          $list = $Priorite->listPriorite();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idPriorite'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
                                 </select>
                               </div>
                               <!-- /.form-group -->
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                          </div>
-                          <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Assigné à</label>
-                            <td><select class="form-control">
-                              <option selected="selected"> -Choisir agent-</option>
-                              <option> Agent 1</option>
-                              <option> Agent 2</option>
-                              <option> Agent 3</option>
-                            </select></td>
-                          </div>
+                        
                           <div class="form-group">
                             <label for="message-text" class="col-form-label">Description</label>
                             <textarea class="form-control" id="message-text"></textarea>
                           </div>
-                          
+                          <div class="form-group">
+                            <div class="col-12 col-sm-6">
+                              <div class="form-group">
+                                <label>Assigné à</label>
+                                
+                                <select required="" class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" id="idRole" name="idRole">
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listAgent();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] .' '.$value['nom']  ?></option>
+                                      <?php }
+                                      ?>
+                                </select>
+                              </div>
+                              <!-- /.form-group -->
+                            </div>
+                          </div>
+                                     
                         </form>
                       </div>
                       <div class="modal-footer">

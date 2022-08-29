@@ -68,7 +68,7 @@
             </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="../../../php/view/agent/liste.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Agent</p>
                     </a>
@@ -77,6 +77,12 @@
                     <a href="../../../php/view/categorie/liste.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Catégorie</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../../php/view/priorite/liste.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Priorité</p>
                     </a>
                   </li>
                   <li class="nav-item">

@@ -149,22 +149,41 @@
 		}
 		// Insertion des valeurs 
 		/** Fonctions CRUD **/
-		public function addUtilisateur() {
+		// public function addUtilisateur() {
 			
-			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, adresse, telephone, idRole, login, motDePasse)  
-						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-			$requete->bindValue(1, $this->getIdUtilisateur());
-			$requete->bindValue(2, $this->getPrenom());
-			$requete->bindValue(3, $this->getNom());
-			$requete->bindValue(4, $this->getEmail());
-			$requete->bindValue(5, $this->getAdresse());
-			$requete->bindValue(6, $this->getTelephone());
-			$requete->bindValue(7, $this->getIdRole());
-			$requete->bindValue(8, $this->getLogin());
-			$requete->bindValue(9, $this->getMotDePasse());
+		// 	$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, idRole, login, motDePasse)  
+		// 				VALUES (?, ?, ?, ?, ?, ?, ?)');
+		// 	$requete->bindValue(1, $this->getIdUtilisateur());
+		// 	$requete->bindValue(2, $this->getPrenom());
+		// 	$requete->bindValue(3, $this->getNom());
+		// 	$requete->bindValue(4, $this->getEmail());
+		// 	// $requete->bindValue(5, $this->getAdresse());
+		// 	// $requete->bindValue(6, $this->getTelephone());
+		// 	$requete->bindValue(5, $this->getIdRole());
+		// 	$requete->bindValue(6, $this->getLogin());
+		// 	$requete->bindValue(7, $this->getMotDePasse());
+		// 	$res = $requete->execute();
+		// 	return($res);
+		// }
+
+		public function addUtilisateur($prenom, $nom, $email, $idRole, $login, $motDePasse) {
+
+			
+			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, idRole, login, motDePasse)  
+						VALUES (?, ?, ?, ?, ?, ?, ?)');
+			$requete->bindValue(1, NULL);
+			$requete->bindValue(2, $prenom);
+			$requete->bindValue(3, $nom);
+			$requete->bindValue(4, $email);
+			$requete->bindValue(5, $idRole);
+			$requete->bindValue(6, $login);
+			$requete->bindValue(7, $motDePasse);
+			
 			$res = $requete->execute();
 			return($res);
 		}
+
+
 		// Modification des valeurs
 		public function updateUtilisateur() {
 			if($this->is_sha1($this->getMotDePasse()))
@@ -200,6 +219,16 @@
 		public function listUtilisateur(){
 			$list = array();
 			$requete = Connexion::Connect()->query('SELECT * FROM utilisateur');
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		public function listAgent(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur  where idRole='2'");
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
 				$list[] = $donnee;

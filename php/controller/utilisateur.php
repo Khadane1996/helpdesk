@@ -75,20 +75,34 @@
     }
     else if(isset($_POST['ajouter'])){
         require_once('../classe/classeUtilisateur.php');
-        $Utilisateur = new Utilisateur();
-        $motDePasse = sha1($_POST['motDePasse']);
-        if ($Utilisateur->emailExist($_POST['email']) == false && $Utilisateur->loginExist($_POST['login']) == false) {
+        // $Utilisateur = new Utilisateur();
+        // $motDePasse = sha1($_POST['motDePasse']);
+        // if ($Utilisateur->emailExist($_POST['email']) == false && $Utilisateur->loginExist($_POST['login']) == false) {
             
-            $Utilisateur = new Utilisateur(NULL, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $motDePasse);
-            echo $Utilisateur->addUtilisateur();
+            // $prenom = $_POST['prenom'];
+            // $nom = $_POST['nom'];
+            // $email = $_POST['email'];
+            // $idRole = $_POST['idRole'];
+            // $login = $_POST['login'];
+            // $motDePasse = $_POST['motDePasse'];
 
-        }
-        else if ($Utilisateur->loginExist($_POST['login']) == true) {
-             echo 2;
-        }
-        else if ($Utilisateur->emailExist($_POST['email']) == true){
-            echo 3;
-        }
+
+
+            // $Utilisateur = new Utilisateur(NULL, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['idRole'], $_POST['login'], $_POST['motDePasse']);
+            // echo $Utilisateur->addUtilisateur();
+
+            $Utilisateur = new Utilisateur();
+            echo $Utilisateur->addUtilisateur( $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['idRole'], $_POST['login'], $_POST['motDePasse']);
+
+            // echo $Utilisateur->addUtilisateur($prenom,$nom,$email,$idRole,$login,$motDePasse);
+
+        // }
+        // else if ($Utilisateur->loginExist($_POST['login']) == true) {
+        //      echo 2;
+        // }
+        // else if ($Utilisateur->emailExist($_POST['email']) == true){
+        //     echo 3;
+        // }
     }
     else if(isset($_POST['modifier'])){
         require_once('../classe/classeUtilisateur.php');
