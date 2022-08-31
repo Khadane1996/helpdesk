@@ -36,6 +36,8 @@
 
     <!-- Toastr -->
     <link rel="stylesheet" href="../../../plugins/toastr/toastr.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -186,8 +188,26 @@
                             </div>
                             <div class="col-6 col-sm-6">
                               <div class="form-group">
+                                <label for="telephone" class="col-form-label">Téléphone</label>
+                                <input required type="text" class="form-control" id="telephone" name="telephone">
+                              </div>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                              <div class="form-group">
                                 <label for="email" class="col-form-label">Email</label>
                                 <input required type="email" class="form-control" id="email" name="email">
+                              </div>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                              <div class="form-group">
+                                <label for="adresse" class="col-form-label">Adresse</label>
+                                <input required type="adresse" class="form-control" id="adresse" name="adresse">
+                              </div>
+                            </div>
+                            <div class="col-6 col-sm-6">
+                              <div class="form-group">
+                                <label for="nom" class="col-form-label">Nom</label>
+                                <input required type="text" class="form-control" id="nom" name="nom">
                               </div>
                             </div>
                             <div class="col-6 col-sm-6">
@@ -231,7 +251,7 @@
                           <input type="hidden" name="ajouter">
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <button type="button" type="submit" class="btn btn-primary" name="action">Créer</button>
+                            <button type="submit" class="btn btn-primary" name="action">Créer</button>
                           </div>
                         </form>
                       </div>
@@ -263,9 +283,11 @@
                   <thead>
                   <tr>
                     <th>&#8470;</th>
-                    <th>Prénom & Nom</th>
-                    <th>Login</th>
+                    <th>Nom complet</th>
+                    <th>Téléphone</th>
                     <th>Email</th>
+                    <th>Profil</th>
+                    <th>Login</th>
                     <th>Status</th>
                     <!-- <th>Profil</th> -->
                     <th>Option</th>
@@ -283,8 +305,11 @@
                     ?>
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $value['prenom']." " .$value['nom'] ?> </td>
-                    <td><?php echo $value['login'] ?></td>
+                    <td><?php echo $value['telephone'] ?></td>
                     <td><?php echo $value['email'] ?></td>
+                    <td><?php echo $value['role'] ?></td>
+                    <td><?php echo $value['login'] ?></td>
+                    
                     <td class="project-state">
                             <span class="badge badge-success">Actif</span>
                     </td>   
@@ -314,9 +339,11 @@
                   
 
                     <th>&#8470;</th>
-                    <th>Prénom & Nom</th>
-                    <th>Login</th>
+                    <th>Nom complet</th>
+                    <th>Téléphone</th>
                     <th>Email</th>
+                    <th>Profil</th>
+                    <th>Login</th>
                     <th>Status</th>
                     <!-- <th>Profil</th> -->
                     <th>Option</th>

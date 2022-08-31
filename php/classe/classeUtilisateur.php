@@ -149,36 +149,22 @@
 		}
 		// Insertion des valeurs 
 		/** Fonctions CRUD **/
-		// public function addUtilisateur() {
-			
-		// 	$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, idRole, login, motDePasse)  
-		// 				VALUES (?, ?, ?, ?, ?, ?, ?)');
-		// 	$requete->bindValue(1, $this->getIdUtilisateur());
-		// 	$requete->bindValue(2, $this->getPrenom());
-		// 	$requete->bindValue(3, $this->getNom());
-		// 	$requete->bindValue(4, $this->getEmail());
-		// 	// $requete->bindValue(5, $this->getAdresse());
-		// 	// $requete->bindValue(6, $this->getTelephone());
-		// 	$requete->bindValue(5, $this->getIdRole());
-		// 	$requete->bindValue(6, $this->getLogin());
-		// 	$requete->bindValue(7, $this->getMotDePasse());
-		// 	$res = $requete->execute();
-		// 	return($res);
-		// }
 
-		public function addUtilisateur($prenom, $nom, $email, $idRole, $login, $motDePasse) {
+		public function addUtilisateur($prenom, $nom, $email, $adresse, $telephone, $idRole, $login, $motDePasse) {
 
+			$motDePasse = sha1($motDePasse);
 			
-			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, idRole, login, motDePasse)  
-						VALUES (?, ?, ?, ?, ?, ?, ?)');
+			$requete = Connexion::Connect()->prepare('INSERT INTO utilisateur(idUtilisateur, prenom, nom, email, adresse, telephone, idRole, login, motDePasse)  
+						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, NULL);
 			$requete->bindValue(2, $prenom);
 			$requete->bindValue(3, $nom);
 			$requete->bindValue(4, $email);
-			$requete->bindValue(5, $idRole);
-			$requete->bindValue(6, $login);
-			$requete->bindValue(7, $motDePasse);
-			
+			$requete->bindValue(5, $adresse);
+			$requete->bindValue(6, $telephone);
+			$requete->bindValue(7, $idRole);
+			$requete->bindValue(8, $login);
+			$requete->bindValue(9, $motDePasse);
 			$res = $requete->execute();
 			return($res);
 		}
@@ -218,7 +204,7 @@
 		// Liste des utilisateurs 
 		public function listUtilisateur(){
 			$list = array();
-			$requete = Connexion::Connect()->query('SELECT * FROM utilisateur');
+			$requete = Connexion::Connect()->query('SELECT * FROM vutilisateur');
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
 				$list[] = $donnee;
@@ -239,7 +225,7 @@
 		// Liste des roles
 		public function listRole(){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT libelle FROM role");
+			$requete = Connexion::Connect()->query("SELECT * FROM role");
 
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
