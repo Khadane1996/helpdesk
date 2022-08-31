@@ -1,0 +1,2 @@
+ErrorDocument 404 /helpdesk/accueil.php
+RewriteEngine On
