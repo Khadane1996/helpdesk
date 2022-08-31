@@ -56,16 +56,7 @@
             </div>
           </div>
         </div>      
-        <div class="input-group mb-3">
-                          <div class="form-group">
-                           
-                            <select class="form-control" name="idRole">           
-                              <option value="1"> Admininstrateur</option>
-                              <option value="2"> Technicien </option>
-                              <option value="3" selected> Utilisateur Simple </option>
-                            </select>
-                          </div>
-        </div>        
+             
         <div class="input-group mb-3">
           <input type="password" class="form-control" name="motDePasse" placeholder="Mot de passe">
           <div class="input-group-append">
@@ -82,6 +73,16 @@
             </div>
           </div>
         </div>
+        <div class="input-group mb-3" name="idRole" value="3">
+                          <!-- <div class="form-group">
+                           
+                            <select class="form-control" name="idRole">           
+                              <option value="1"> Admininstrateur</option>
+                              <option value="2"> Technicien </option>
+                              <option value="3" selected> Utilisateur Simple </option>
+                            </select>
+                          </div> -->
+        </div>   
         <div class="row">
           
           <!-- /.col -->
