@@ -21,7 +21,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="../../../php/view/dashboard/liste" class="nav-link ">
+            <a href="../../../php/view/dashboard/liste.php" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Tableau de bord
@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../../../php/view/utilisateur/liste" class="nav-link">
+            <a href="../../../php/view/utilisateur/liste.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Utilisateurs
@@ -39,7 +39,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../../../php/view/role/liste" class="nav-link">
+            <a href="../../../php/view/role/liste.php" class="nav-link">
               <i class="nav-icon fas fa-users-cog"></i>
               <p>
                 Role
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../../../php/view/ticket/liste" class="nav-link">
+            <a href="../../../php/view/ticket/liste.php" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
               <p>
                 Tickets
@@ -68,25 +68,25 @@
             </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="../../../php/view/agent/liste" class="nav-link">
+                    <a href="../../../php/view/agent/liste.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Agent</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/categorie/liste" class="nav-link">
+                    <a href="../../../php/view/categorie/liste.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Catégorie</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/priorite/liste" class="nav-link">
+                    <a href="../../../php/view/priorite/liste.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Priorité</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/status/liste" class="nav-link">
+                    <a href="../../../php/view/status/liste.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Status</p>
                     </a>
