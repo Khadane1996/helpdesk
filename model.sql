@@ -53,3 +53,9 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+CREATE view vutilisateur as
+SELECT u.*, r.libelle as role
+FROM utilisateur u, role r
+WHERE u.idRole = r.idRole
+
+
