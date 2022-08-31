@@ -1,17 +1,17 @@
 <?php
     @session_start();
     require_once("functions.php");
-    function matricule($table, $champs){
-        require_once('../classes/classeConnexion.php');
-        $requete = Connection::Connexion()->query("SELECT $champs FROM $table ORDER BY $champs DESC LIMIT 0,1;");
-        $result = "0";
-        foreach ($requete as $donne) 
-            $result = $donne[0];
-        if($result == "0")
-            return ("0");
-        else
-            return($result);
-    }
+    // function matricule($table, $champs){
+    //     require_once('../classes/classeConnexion.php');
+    //     $requete = Connection::Connexion()->query("SELECT $champs FROM $table ORDER BY $champs DESC LIMIT 0,1;");
+    //     $result = "0";
+    //     foreach ($requete as $donne) 
+    //         $result = $donne[0];
+    //     if($result == "0")
+    //         return ("0");
+    //     else
+    //         return($result);
+    // }
 
     function sendEmailResetPassword($sujet, $mailDestinataire, $contenu){
         if(mail($mailDestinataire, $sujet, $contenu)){
