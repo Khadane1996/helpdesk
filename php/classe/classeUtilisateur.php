@@ -178,7 +178,7 @@
 				$password = sha1($this->getMotDePasse());
 			
 
-			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
+			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET prenom = ?, nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
 						');
 			$requete->bindValue(1, $this->getPrenom());
 			$requete->bindValue(2, $this->getNom());
@@ -214,7 +214,7 @@
 
 		public function listAgent(){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur  where idRole='2'");
+			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur  where idRole='2'");
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
 				$list[] = $donnee;

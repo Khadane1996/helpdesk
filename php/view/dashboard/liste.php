@@ -70,9 +70,15 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>15</h3>
-
-                                    <p>TICKETS OUVERTS</p>
+                                  <?php 
+                                        require_once('../../../php/classe/classeTicket.php');
+                                        $Ticket = new Ticket();
+                                        $list = $Ticket->listTicketOuvert();
+                                        $nombre = count($list);
+                                        echo "<h3>$nombre</h3>";                         
+                                  ?> 
+                                             
+                                  <p>TICKETS OUVERTS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -85,9 +91,13 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
-                                    <h3>53</h3>
-
+                                  <?php 
+                                      require_once('../../../php/classe/classeTicket.php');
+                                      $Ticket = new Ticket();
+                                      $list = $Ticket->listTicketFerme();
+                                      $nombre = count($list);
+                                      echo "<h3>$nombre</h3>";                         
+                                  ?> 
                                     <p>TICKETS FERMÉS</p>
                                 </div>
                                 <div class="icon">
@@ -101,14 +111,19 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
-
+                                <?php 
+                                      require_once('../../../php/classe/classeUtilisateur.php');
+                                      $Utilisateur = new Utilisateur();
+                                      $list = $Utilisateur->listUtilisateur();
+                                      $nombre = count($list);
+                                      echo "<h3>$nombre</h3>";                         
+                                  ?> 
                                     <p>User Registrations</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="../utilisateur/liste.php" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -116,14 +131,19 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>2</h3>
-
+                                <?php 
+                                      require_once('../../../php/classe/classeUtilisateur.php');
+                                      $Utilisateur = new Utilisateur();
+                                      $list = $Utilisateur->listAgent();
+                                      $nombre = count($list);
+                                      echo "<h3>$nombre</h3>";                         
+                                  ?> 
                                     <p>AGENTS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="../agent/liste.php" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
