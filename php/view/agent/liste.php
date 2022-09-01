@@ -91,7 +91,7 @@
                   <thead>
                   <tr>
                     <th>&#8470;</th>
-                    <th>Prénom & Nom</th>
+                    <th>Nom complet</th>
                     <th>Email</th>
                     <th>Tickets Ouverts</th>
                     <th>Tickets Fermés</th>
@@ -145,7 +145,7 @@
                   
 
                     <th>&#8470;</th>
-                    <th>Prénom & Nom</th>
+                    <th>Nom complet</th>
                     <th>Email</th>
                     <th>Tickets Ouverts</th>
                     <th>Tickets Fermés</th>
