@@ -212,6 +212,7 @@
 			return $list;
 		}
 
+		// Liste des agents
 		public function listAgent(){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur  where idRole='2'");
