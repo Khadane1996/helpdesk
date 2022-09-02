@@ -98,13 +98,6 @@
                     <th>Status</th>
                     <th>Auteur</th>
                     <th>Assigné à</th>
-
-                    <!-- <th>Auteur</th>
-                    <th>Priorité</th>
-                    <th>Catégorie</th>
-                    <th>Status</th>
-                    <th>Assigné à</th> -->
-                   
                     <th>Option</th>
                   </tr>
                   </thead>
@@ -177,36 +170,6 @@
                   <?php 
                     }
                    ?>
-
-                    <!-- <tr>
-                      <td>Problème de routeur</td>
-                      <td>Mbery Dieng</td>
-                      <td>Moyenne</td>
-                      <td>Matérielle</td>
-                      
-                        <td class="project-state">
-                            <span class="badge badge-danger">Fermé</span>
-                        </td>
-                        <td> Agent 2 </td>
-                       
-                       <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" href="#">
-                                <i class="fas fa-eye">
-                                </i>
-                                Voir
-                            </a>
-                            <a class="btn btn-info btn-sm" href="#">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Modifier
-                            </a>
-                            <a class="btn btn-danger btn-sm" href="#">
-                                <i class="fas fa-trash">
-                                </i>
-                                Supprimer
-                            </a>
-                        </td>
-                    </tr> -->
                               
                   </tbody>
                   <tfoot>
@@ -218,9 +181,6 @@
                     <th>Status</th>
                     <th>Auteur</th>
                     <th>Assigné à</th>
-
-                
-              
                     <th>Option</th>
                   </tr>
                   </tfoot>

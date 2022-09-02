@@ -22,7 +22,10 @@
         echo $Status->addStatus($_POST['libelle']);
     }
     else if(isset($_POST['modifier'])){
-       
+        require_once('../classe/classeStatus.php');
+        $Status = new Status();
+
+        echo $Status->updateStatus($_POST['modifier'], $_POST['libelle']);
     }else{
         echo 2;
     }

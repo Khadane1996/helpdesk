@@ -80,6 +80,16 @@
 			return($res);
 		}
 
+
+		// Modification des valeurs
+		public function updateStatus($idStatus,$libelle) {
+			$requete = Connexion::Connect()->prepare('UPDATE status SET libelle = ? WHERE idStatus = ?
+						');
+			$requete->bindValue(1, $libelle);
+			$requete->bindValue(2, $idStatus);
+			$res = $requete->execute(); 
+			return($res);
+		}
 		
 		
 	}

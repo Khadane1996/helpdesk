@@ -187,6 +187,18 @@
 			return $list;
 		}
 	    
+
+		// Details ticket
+		// public function detailsTicket($idTicket){
+		// 	$list = array();
+
+		// 	$requete = Connexion::Connect()->query("SELECT * FROM vTicket WHERE idTicket = \"$idTicket\" ");
+
+		// 	foreach ($requete as $donnee){
+		// 		$list[] = $donnee;
+		// 	}
+		// 	return $list;
+		// }
 	    
 
 	  

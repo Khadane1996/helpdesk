@@ -367,6 +367,7 @@
 	            return false;    
 	    }
 
+		// Ajout de role	
 		public function addRole($libelle) {
 
 			
@@ -377,7 +378,17 @@
 			$res = $requete->execute();
 			return($res);
 		}
+		
 
+		// Modification des valeurs
+		public function updateRole($idRole,$libelle) {
+			$requete = Connexion::Connect()->prepare('UPDATE role SET libelle = ? WHERE idRole = ?
+						');
+			$requete->bindValue(1, $libelle);
+			$requete->bindValue(2, $idRole);
+			$res = $requete->execute(); 
+			return($res);
+		}
 		
 		
 	}

@@ -8,7 +8,6 @@ $(function(){
             data: $(this).serialize(),
            
             success: function(msg){
-                alert(msg);
                 if(parseInt(msg)==1){
                     Swal.fire(
                     'Réussi!',
