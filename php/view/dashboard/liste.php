@@ -81,7 +81,8 @@
                                   <p>TICKETS OUVERTS</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-bag"></i>
+                                    <i class="ion ion-alert"></i>
+                                    <!-- <img src="probleme.png"  width="50" height="50"> -->
                                 </div>
                                 <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -101,7 +102,8 @@
                                     <p>TICKETS FERMÉS</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
+                                    <i class="ion ion-android-checkbox-outline"></i>
+                                  
                                 </div>
                                 <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -118,7 +120,7 @@
                                       $nombre = count($list);
                                       echo "<h3>$nombre</h3>";                         
                                   ?> 
-                                    <p>User Registrations</p>
+                                    <p>UTILISATEURS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
@@ -141,7 +143,7 @@
                                     <p>AGENTS</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                                    <i class="ion ion-settings"></i>
                                 </div>
                                 <a href="../agent/liste.php" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
