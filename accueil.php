@@ -4,7 +4,7 @@
 
     if(!isset($_SESSION['kbadakarconnected'])){
 
-        // header("location:index.php");
+        header("location:index.php");
 
     }
 
@@ -129,7 +129,7 @@
                     <!-- Message Start -->
                     <div class="media">
                       <div class="media-body">
-                        <button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-lock"></i>  Fermer la session</button>       
+                        <a href="deconnexion.php" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-lock"></i>  Fermer la session</a>       
                       </div>
                     </div>
                   <!-- Message End -->

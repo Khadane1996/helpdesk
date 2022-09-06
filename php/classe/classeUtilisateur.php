@@ -158,7 +158,7 @@
 						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, NULL);
 			$requete->bindValue(2, $prenom);
-			$requete->bindValue(3, $nom);
+			$requete->bindValue(3, $nom); 
 			$requete->bindValue(4, $email);
 			$requete->bindValue(5, $adresse);
 			$requete->bindValue(6, $telephone);
@@ -300,7 +300,7 @@
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
-	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
+	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
 	            $list[] = $donnee;
@@ -320,7 +320,7 @@
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
-	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" AND etat = 1 ");
+	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" AND etat = 1 ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
 	            $list[] = $donnee;
@@ -337,7 +337,7 @@
 	    public function detailsUtilisateur($login, $mdp){
 			$list = array();
 
-			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
+			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
 
 			foreach ($requete as $donnee){
 				$list[] = $donnee;
