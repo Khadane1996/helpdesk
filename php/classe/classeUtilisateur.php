@@ -158,7 +158,7 @@
 						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 			$requete->bindValue(1, NULL);
 			$requete->bindValue(2, $prenom);
-			$requete->bindValue(3, $nom);
+			$requete->bindValue(3, $nom); 
 			$requete->bindValue(4, $email);
 			$requete->bindValue(5, $adresse);
 			$requete->bindValue(6, $telephone);
@@ -178,7 +178,7 @@
 				$password = sha1($this->getMotDePasse());
 			
 
-			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET prenom = ?, nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
+			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
 						');
 			$requete->bindValue(1, $this->getPrenom());
 			$requete->bindValue(2, $this->getNom());
@@ -212,18 +212,15 @@
 			return $list;
 		}
 
-		// Liste des agents
 		public function listAgent(){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur  where idRole='2'");
+			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur  where idRole='2'");
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
 				$list[] = $donnee;
 			}
 			return $list;
 		}
-
-		
 
 		// Liste des roles
 		public function listRole(){
@@ -303,7 +300,7 @@
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
-	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
+	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
 	            $list[] = $donnee;
@@ -319,11 +316,11 @@
 
 	    public function isActivated($login, $mdp){
 	        $list = array();
-	        /*On crypte le mot de passe avant la vérification car il est crypté dans la base de données
+	        /*On crypte le mot de passe avant la vérification car il est crypté dan sla base de données
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
-	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" AND etat = 1 ");
+	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" AND etat = 1 ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
 	            $list[] = $donnee;
@@ -340,7 +337,7 @@
 	    public function detailsUtilisateur($login, $mdp){
 			$list = array();
 
-			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
+			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
 
 			foreach ($requete as $donnee){
 				$list[] = $donnee;
@@ -367,7 +364,8 @@
 	            return false;    
 	    }
 
-		// Ajout de role	
+
+        // Ajout de role
 		public function addRole($libelle) {
 
 			
@@ -378,7 +376,7 @@
 			$res = $requete->execute();
 			return($res);
 		}
-		
+
 
 		// Modification des valeurs
 		public function updateRole($idRole,$libelle) {
@@ -389,9 +387,15 @@
 			$res = $requete->execute(); 
 			return($res);
 		}
+
 		
 		
 	}
 			
 
  ?>
+
+
+		
+		
+		

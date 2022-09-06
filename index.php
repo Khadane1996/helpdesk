@@ -13,6 +13,31 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+  <!-- Toastr -->
+  <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -24,9 +49,9 @@
     <div class="card-body">
       <p class="login-box-msg">CONNEXION</p>
 
-      <form  id="loginForm">
+      <form id="loginForm">
         <div class="input-group mb-3">
-          <input id="login" name="login" type="text" class="form-control" placeholder="Identifiant" required>
+          <input type="text" name="login" id="login" class="form-control" placeholder="Login" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +59,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input id="motDePasse" name="motDePasse" type="password" class="form-control" placeholder="Mot de passe" required>
+          <input type="password" name="motDePasse" id="motDePasse" class="form-control" placeholder="Mot de passe" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -52,7 +77,8 @@
           </div> -->
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">SE CONNECTER</button>
+            <input type="hidden" name="ajouter">
+            <button type="submit" class="btn btn-primary btn-block" name="action">SE CONNECTER</button>
           </div>
           <!-- /.col -->
         </div>
