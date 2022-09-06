@@ -349,4 +349,50 @@
 
   <script type="text/javascript" src="ticket.js"></script>
 
+  <script type="text/javascript">
+  
+  function supprimer(idElement){
+    Swal.fire({
+      title: 'Êtes vous sur?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          $.ajax({
+              type: "GET",
+              url: "../../controller/ticket.php?supprimer="+idElement, 
+              data: $(this).serialize(),
+              success: function(msg){
+                  if(parseInt(msg)==1){
+                    Swal.fire(
+                      'Supprimé!',
+                      'Ce ticket a été supprimée.',
+                      'success'
+                    )
+                    location.reload();
+                  }else{ 
+                    // Swal.fire(
+                    //   'Deleted!',
+                    //   'Your file has been deleted.',
+                    //   'success'
+                    // )
+                  }
+              },
+              error: function(){
+                  // Swal.fire(
+                  //   'Deleted!',
+                  //   'Your file has been deleted.',
+                  //   'success'
+                  // )
+              }
+          });
+      }
+    })
+  }
 
+
+</script>

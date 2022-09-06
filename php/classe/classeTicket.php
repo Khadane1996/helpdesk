@@ -201,6 +201,14 @@
 		// }
 	    
 
+		// Suppression de ticket
+		public function deleteTicket($code){
+			$requete = Connexion::Connect()->prepare('DELETE FROM ticket  WHERE idTicket = ?');
+			$requete->bindValue(1, $code);
+			$res = $requete->execute();
+			return($res);
+		}
+
 	  
 	  
 
