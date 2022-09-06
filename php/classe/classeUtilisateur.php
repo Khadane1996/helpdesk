@@ -319,7 +319,7 @@
 
 	    public function isActivated($login, $mdp){
 	        $list = array();
-	        /*On crypte le mot de passe avant la vérification car il est crypté dan sla base de données
+	        /*On crypte le mot de passe avant la vérification car il est crypté dans la base de données
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
