@@ -148,7 +148,7 @@
                     <th><?php echo $value['categorie'] ?></th>
                     <th><?php echo $value['status'] ?></th>
                     <th><?php echo $value['prenomAuteur'] ?></th>
-                    <th><?php echo $value['idAssigne'] ?></th>
+                    <th><?php echo $value['prenomAgent'] ?></th>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
