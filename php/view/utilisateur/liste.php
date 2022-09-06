@@ -129,9 +129,9 @@
                               </i>
                               Modifier
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
+                          <a onclick="supprimer('<?php echo $value['idUtilisateur'] ?>')" class="btn btn-danger btn-sm" href="#">
+                              <!-- <i class="fas fa-trash">
+                              </i> -->
                               Supprimer
                           </a>
                     </td>
@@ -379,3 +379,49 @@
 
 
 <!-- ./wrapper -->
+<script type="text/javascript">
+  
+  function supprimer(idElement){
+    Swal.fire({
+      title: 'Êtes vous sur?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          $.ajax({
+              type: "GET",
+              url: "../../controller/utilisateur.php?supprimer="+idElement, 
+              data: $(this).serialize(),
+              success: function(msg){
+                  if(parseInt(msg)==1){
+                    Swal.fire(
+                      'Supprimé!',
+                      'Cet utilisateur a été supprimée.',
+                      'success'
+                    )
+                    location.reload();
+                  }else{ 
+                    // Swal.fire(
+                    //   'Deleted!',
+                    //   'Your file has been deleted.',
+                    //   'success'
+                    // )
+                  }
+              },
+              error: function(){
+                  // Swal.fire(
+                  //   'Deleted!',
+                  //   'Your file has been deleted.',
+                  //   'success'
+                  // )
+              }
+          });
+      }
+    })
+  }
+
+</script>
