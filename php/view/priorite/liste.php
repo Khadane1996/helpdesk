@@ -187,8 +187,7 @@
                 <button type="submit" class="btn btn-primary" name="action">Appliquer changement</button>
               </div>
             </form>
-          </div>
-          
+          </div>     
         </div>
       </div>
     </div>

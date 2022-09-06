@@ -24,9 +24,9 @@
     <div class="card-body">
       <p class="login-box-msg">CONNEXION</p>
 
-      <form action="index3.html" method="post">
+      <form  id="loginForm">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Identifiant" required>
+          <input id="login" name="login" type="text" class="form-control" placeholder="Identifiant" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Mot de passe" required>
+          <input id="motDePasse" name="motDePasse" type="password" class="form-control" placeholder="Mot de passe" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
