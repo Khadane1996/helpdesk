@@ -67,8 +67,10 @@ SELECT
   p.libelle as priorite,
   c.libelle as categorie, 
   s.libelle as status, 
-  a.prenom as prenomAuteur,
-  b.prenom as prenomAgent
+  a.prenom  as prenomAuteur,
+  a.nom     as nomAuteur,
+  b.prenom  as prenomAgent,
+  b.nom     as nomAgent
 
 FROM
   (SELECT * FROM ticket) t,

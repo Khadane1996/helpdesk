@@ -44,7 +44,7 @@ $('#monFormMod').on('submit', function(e) {
         url: "../../controller/priorite.php", //process to mail
         data: $(this).serialize(),
         success: function(msg){
-            alert(msg)
+            
             if(parseInt(msg)==1){
                 Swal.fire(
                 'Réussi!',
