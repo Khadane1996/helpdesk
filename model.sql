@@ -63,9 +63,7 @@ WHERE u.idRole = r.idRole
 
 CREATE OR REPLACE VIEW vticket AS
 SELECT 
-  t.idTicket,
-  t.idStatus,
-  t.description,
+  t.*,
   p.libelle as priorite,
   c.libelle as categorie, 
   s.libelle as status, 
@@ -99,6 +97,7 @@ SELECT
   u.prenom,
   u.nom,
   u.email,
+  u.etat,
   o.tickets_ouverts,
   f.tickets_fermes
 

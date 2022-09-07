@@ -135,22 +135,22 @@
 
 
 		// Modification des valeurs
-		// public function updateTicket() {
+		public function updateTicket($idTicket, $description, $idPriorite, $idCategorie, $idAuteur, $idAssigne, $idStatus) {
 		
 
-		// 	$requete = Connexion::Connect()->prepare('UPDATE ticket SET idPriorite = ?, idCategorie = ?, idAuteur = ?, idAssigne = ?, idStatus = ?, login = ?, motDePasse = ? WHERE idTicket = ?
-		// 				');
-		// 	$requete->bindValue(1, $this->getDescription());
-		// 	$requete->bindValue(2, $this->getIdPriorite());
-		// 	$requete->bindValue(3, $this->getIdCategorie());
-		// 	$requete->bindValue(4, $this->getIdAuteur());
-		// 	$requete->bindValue(5, $this->getIdAssigne());
-		// 	$requete->bindValue(6, $this->getIdStatus());	
-		// 	$requete->bindValue(7, $this->getIdTicket());
+			$requete = Connexion::Connect()->prepare('UPDATE ticket SET description = ?, idPriorite = ?, idCategorie = ?, idAuteur = ?, idAssigne = ?, idStatus = ? WHERE idTicket = ?
+						');
+			$requete->bindValue(1, $description);
+			$requete->bindValue(2, $idPriorite);
+			$requete->bindValue(3, $idCategorie);
+			$requete->bindValue(4, $idAuteur);
+			$requete->bindValue(5, $idAssigne);
+			$requete->bindValue(6, $idStatus);	
+			$requete->bindValue(7, $idTicket);
 
-		// 	$res = $requete->execute(); 
-		// 	return($res);
-		// }
+			$res = $requete->execute(); 
+			return($res);
+		}
 	
 		// Liste des Tickets
 		public function listTicket(){

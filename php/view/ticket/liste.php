@@ -155,7 +155,7 @@
                               </i>
                               Voir
                           </a>
-                          <a onclick="modifier('<?php echo $value['libelle'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                          <a onclick="modifier('<?php echo $value['description'] ?>',<?php echo $value['idPriorite'] ?>',<?php echo $value['idCategorie'] ?>',<?php echo $value['idStatus'] ?>',<?php echo $value['idAuteur'] ?>',<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
                               <!-- <i class="fas fa-pencil-alt">
                               </i> -->
                               Modifier
@@ -280,7 +280,7 @@
                                           $list = $Utilisateur->listUtilisateur();
                                           foreach($list as $value){
                                       ?>
-                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></option>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom']. " " .$value['nom'] ?></option>
                                       <?php }
                                       ?>
                                   </select>
@@ -302,10 +302,10 @@
                                       <?php 
                                           require_once('../../../php/classe/classeUtilisateur.php');
                                           $Utilisateur = new Utilisateur();
-                                          $list = $Utilisateur->listAgent();
+                                          $list = $Utilisateur->listAgentActif();
                                           foreach($list as $value){
                                       ?>
-                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></option>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom']. " " .$value['nom'] ?></option>
                                       <?php }
                                       ?>
                                   </select>
@@ -331,6 +331,133 @@
                     </div>
                   </div>
                   <!-- ajouter ticket fin -->
+                  
+                   <!-- modifier ticket debut -->
+                   <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modifier catégorie</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="monFormMod">
+                            <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Priorite</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idPriorite2" name="idPriorite">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classePriorite.php');
+                                          $Priorite = new Priorite();
+                                          $list = $Priorite->listPriorite();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idPriorite'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Categorie</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idCategorie2" name="idCategorie">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeCategorie.php');
+                                          $Categorie = new Categorie();
+                                          $list = $Categorie->listCategorie();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idCategorie'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Status</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idStatus2" name="idStatus">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeStatus.php');
+                                          $Status = new Status();
+                                          $list = $Status->listStatus();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idStatus'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Auteur</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idAuteur2" name="idAuteur">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listUtilisateur();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom']. " " .$value['nom'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                  <div class="form-group">
+                                    <label for="description" class="col-form-label">Description</label>
+                                    <input required type="text" class="form-control" id="description2" name="description">
+                                  </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Assigne à</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idAssigne2" name="idAssigne">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listAgentActif();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom']. " " .$value['nom'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+                              
+                              
+                            </div>  
+                            <input type="hidden" name="modifier" id="modifier">
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                              <button type="submit" class="btn btn-primary" name="action">Modifier</button>
+                            </div>
+                          </form>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+                  <!-- modifier ticket fin -->
 
   </div>
   <!-- /.content-wrapper -->
@@ -394,5 +521,15 @@
     })
   }
 
+  function modifier(description,idPriorite,idCategorie,idStatus,idAuteur,idAssigne,idTicket){
+    $("#description2").val(description);
+    $("#idPriorite2").val(idPriorite);
+    $("#idCategorie2").val(idCategorie);
+    $("#idStatus2").val(idStatus);
+    $("#idAuteur2").val(idAuteur);
+    $("#idAssigne2").val(idAssigne);
+    $("#modifier").val(idTicket);
+  
+  }
 
 </script>

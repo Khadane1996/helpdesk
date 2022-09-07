@@ -116,9 +116,16 @@
                     <td>2</td>
                     <td>5</td>
                     
-                    <td class="project-state">
-                            <span class="badge badge-success">Actif</span>
-                    </td>   
+                    <td class="project-state"><?php
+                    if($value['etat'] == '1')
+                    {
+                      echo '<span class="badge badge-success">Disponible</span>';
+                    }
+                    else
+                    {
+                      echo '<span class="badge badge-danger">Indisponible</span>';
+                    }
+                    ?></td>   
                     <!-- <td><?php echo $value['idRole'] ?></td> -->
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
@@ -126,11 +133,11 @@
                               </i>
                               Voir mission
                           </a>
-                          <a class="btn btn-info btn-sm" href="#">
+                          <!-- <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Modifier
-                          </a>
+                          </a> -->
                           <!-- <a class="btn btn-danger btn-sm" href="#">
                               <i class="fas fa-trash">
                               </i>

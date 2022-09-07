@@ -224,6 +224,16 @@
 			return $list;
 		}
 
+		public function listAgentActif(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur  where idRole='2' AND etat='1'");
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
 		// Liste des roles
 		public function listRole(){
 			$list = array();
