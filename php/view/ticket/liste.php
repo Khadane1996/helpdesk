@@ -67,93 +67,7 @@
               <!-- <li><button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-plus"></i> ajouter</button></li> -->
               <li>
                 <button type="button" class="btn btn-outline-primary btn-block btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="@mdo"><i class="fa fa-plus"></i> ajouter</button>
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter ticket</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label>Catégorie</label>
-                                <select required="" class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" id="idRole" name="idRole">
-                                    <option value="" selected disabled>-Choisir-</option>
-                                      <?php 
-                                          require_once('../../../php/classe/classeCategorie.php');
-                                          $Categorie = new Categorie();
-                                          $list = $Categorie->listCategorie();
-                                          foreach($list as $value){
-                                      ?>
-                                    <option value="<?php echo $value['idCategorie'] ?>"><?php echo $value['libelle'] ?></option>
-                                      <?php }
-                                      ?>
-                                </select>
-                              </div>
-                              <!-- /.form-group -->
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
-                              <div class="form-group">
-                                <label>Priorité</label>
-                                <select required="" class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" id="idRole" name="idRole">
-                                    <option value="" selected disabled>-Choisir-</option>
-                                      <?php 
-                                          require_once('../../../php/classe/classePriorite.php');
-                                          $Priorite = new Priorite();
-                                          $list = $Priorite->listPriorite();
-                                          foreach($list as $value){
-                                      ?>
-                                    <option value="<?php echo $value['idPriorite'] ?>"><?php echo $value['libelle'] ?></option>
-                                      <?php }
-                                      ?>
-                                </select>
-                              </div>
-                              <!-- /.form-group -->
-                            </div>
-                          </div>
-                        
-                          <div class="form-group">
-                            <label for="message-text" class="col-form-label">Description</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-12 col-sm-6">
-                              <div class="form-group">
-                                <label>Assigné à</label>
-                                
-                                <select required="" class="form-control select2 select2-primary" data-dropdown-css-class="select2-primary" style="width: 100%;" id="idRole" name="idRole">
-                                    <option value="" selected disabled>-Choisir-</option>
-                                      <?php 
-                                          require_once('../../../php/classe/classeUtilisateur.php');
-                                          $Utilisateur = new Utilisateur();
-                                          $list = $Utilisateur->listAgent();
-                                          foreach($list as $value){
-                                      ?>
-                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] .' '.$value['nom']  ?></option>
-                                      <?php }
-                                      ?>
-                                </select>
-                              </div>
-                              <!-- /.form-group -->
-                            </div>
-                          </div>
-                                     
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn btn-primary">Créer</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </li>
             </ol>
           </div>
@@ -177,20 +91,19 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>&#8470;</th>
                     <th>Description</th>
-                    <th>Auteur</th>
                     <th>Priorité</th>
                     <th>Catégorie</th>
                     <th>Status</th>
+                    <th>Auteur</th>
                     <th>Assigné à</th>
-                    <!-- <th>Created</th>
-                    <th>Updated</th> -->
-                    <th> </th>
+                    <th>Option</th>
                   </tr>
                   </thead>
                   <tbody>
                   
-                    <tr>
+                    <!-- <tr>
                       <td>Problème d'accès</td>
                       <td>Fatou Faye</td>
                       <td>Haute</td>
@@ -199,8 +112,7 @@
                             <span class="badge badge-success">Ouvert</span>
                       </td>
                       <td> Agent 1 </td>
-                      <!-- <td> 1 semaine </td>
-                      <td> 1 semaine </td> -->
+                      
                       <td class="project-actions text-right">
                             <a class="btn btn-primary btn-sm" href="#">
                                 <i class="fas fa-eye">
@@ -218,51 +130,58 @@
                                 Supprimer
                             </a>
                       </td>
-                    </tr>
+                    </tr> -->
 
-                    <tr>
-                      <td>Problème de routeur</td>
-                      <td>Mbery Dieng</td>
-                      <td>Moyenne</td>
-                      <td>Matérielle</td>
-                      
-                        <td class="project-state">
-                            <span class="badge badge-danger">Fermé</span>
-                        </td>
-                        <td> Agent 2 </td>
-                        <!-- <td> 2 semaines </td>
-                        <td> 2 semaines </td> -->
-                       <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" href="#">
-                                <i class="fas fa-eye">
-                                </i>
-                                Voir
-                            </a>
-                            <a class="btn btn-info btn-sm" href="#">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Modifier
-                            </a>
-                            <a class="btn btn-danger btn-sm" href="#">
-                                <i class="fas fa-trash">
-                                </i>
-                                Supprimer
-                            </a>
-                        </td>
-                    </tr>
+
+                    <?php 
+                    require_once('../../../php/classe/classeTicket.php');
+                    $Ticket = new Ticket();
+                    $list = $Ticket->listTicket();
+                    $i = 1;
+                    foreach($list as $value){
+                   ?>
+                   
+                  <tr>
+                    <td class="project-actions text-right"><?php echo $i++; ?></td>
+                    <th><?php echo $value['description'] ?></th>
+                    <th><?php echo $value['priorite'] ?></th>
+                    <th><?php echo $value['categorie'] ?></th>
+                    <th><?php echo $value['status'] ?></th>
+                    <th><?php echo $value['prenomAuteur'] ?></th>
+                    <th><?php echo $value['prenomAgent'] ?></th>
+                    <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="#">
+                              <i class="fas fa-eye">
+                              </i>
+                              Voir
+                          </a>
+                          <a onclick="modifier('<?php echo $value['libelle'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                              <!-- <i class="fas fa-pencil-alt">
+                              </i> -->
+                              Modifier
+                          </a>
+                          <a onclick="supprimer('<?php echo $value['idTicket'] ?>')" class="btn btn-danger btn-sm" href="#">
+                              <!-- <i class="fas fa-trash">
+                              </i> -->
+                              Supprimer
+                          </a>
+                    </td>
+                  </tr>
+                  <?php 
+                    }
+                   ?>
                               
                   </tbody>
                   <tfoot>
                   <tr>
+                    <th>&#8470;</th>
                     <th>Description</th>
-                    <th>Auteur</th>
                     <th>Priorité</th>
                     <th>Catégorie</th>
                     <th>Status</th>
+                    <th>Auteur</th>
                     <th>Assigné à</th>
-                    <!-- <th>Created</th>
-                    <th>Updated</th> -->
-                    <th> </th>
+                    <th>Option</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -278,6 +197,141 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+      <!-- ajouter ticket debut -->
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Ajouter  ticket</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="monForm">
+                  
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Priorite</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idPriorite" name="idPriorite">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classePriorite.php');
+                                          $Priorite = new Priorite();
+                                          $list = $Priorite->listPriorite();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idPriorite'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Categorie</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idCategorie" name="idCategorie">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeCategorie.php');
+                                          $Categorie = new Categorie();
+                                          $list = $Categorie->listCategorie();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idCategorie'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Status</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idStatus" name="idStatus">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeStatus.php');
+                                          $Status = new Status();
+                                          $list = $Status->listStatus();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idStatus'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Auteur</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idAuteur" name="idAuteur">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listUtilisateur();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="description" class="col-form-label">Description</label>
+                                  <input type="text" class="form-control" id="description" name="description">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Assigne à</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idAssigne" name="idAssigne">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listAgent();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+                              
+                              <!-- <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
+                                  <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
+                                </div>
+                              </div> -->
+                            </div>
+                            
+                            <input type="hidden" name="ajouter">
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                              <button type="submit" class="btn btn-primary" name="action">Créer</button>
+                            </div>
+                          </form>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ajouter ticket fin -->
+
   </div>
   <!-- /.content-wrapper -->
 
@@ -293,4 +347,52 @@
   ?>
   <!-- Include footer fin -->
 
+  <script type="text/javascript" src="ticket.js"></script>
 
+  <script type="text/javascript">
+  
+  function supprimer(idElement){
+    Swal.fire({
+      title: 'Êtes vous sur?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          $.ajax({
+              type: "GET",
+              url: "../../controller/ticket.php?supprimer="+idElement, 
+              data: $(this).serialize(),
+              success: function(msg){
+                  if(parseInt(msg)==1){
+                    Swal.fire(
+                      'Supprimé!',
+                      'Ce ticket a été supprimée.',
+                      'success'
+                    )
+                    location.reload();
+                  }else{ 
+                    // Swal.fire(
+                    //   'Deleted!',
+                    //   'Your file has been deleted.',
+                    //   'success'
+                    // )
+                  }
+              },
+              error: function(){
+                  // Swal.fire(
+                  //   'Deleted!',
+                  //   'Your file has been deleted.',
+                  //   'success'
+                  // )
+              }
+          });
+      }
+    })
+  }
+
+
+</script>

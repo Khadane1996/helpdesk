@@ -53,9 +53,61 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE view vutilisateur as
+CREATE VIEW vutilisateur AS
 SELECT u.*, r.libelle as role
 FROM utilisateur u, role r
 WHERE u.idRole = r.idRole
+
+
+
+
+CREATE OR REPLACE VIEW vticket AS
+SELECT 
+  t.idTicket,
+  t.description,
+  p.libelle as priorite,
+  c.libelle as categorie, 
+  s.libelle as status, 
+  a.prenom as prenomAuteur,
+  b.prenom as prenomAgent
+
+FROM
+  (SELECT * FROM ticket) t,
+  (SELECT * FROM priorite) p,
+  (SELECT * FROM categorie) c,
+  (SELECT * FROM status) s,
+  (SELECT * FROM utilisateur) a,
+  (SELECT * FROM utilisateur) b
+
+WHERE
+    t.idPriorite = p.idPriorite AND 
+    t.idCategorie = c.idCategorie AND 
+    t.idStatus = s.idStatus AND 
+    t.idAuteur = a.idUtilisateur AND
+    t.idAssigne = b.idUtilisateur
+
+
+
+
+
+
+
+
+CREATE OR REPLACE VIEW vagent AS
+SELECT 
+  u.prenom,
+  u.nom,
+  u.email,
+  o.tickets_ouverts,
+  f.tickets_fermes
+
+FROM
+  (SELECT * FROM utilisateur WHERE idRole='2') u,
+  (SELECT count(*) AS tickets_ouverts FROM ticket WHERE idStatus='1') o,
+  (SELECT count(*) AS tickets_fermes FROM ticket WHERE idStatus='2') f,
+  (SELECT idAssigne FROM ticket) t
+
+WHERE   
+  u.idUtilisateur = t.idAssigne
 
 

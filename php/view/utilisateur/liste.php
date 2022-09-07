@@ -42,111 +42,12 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 
 
-<div class="wrapper">
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../../../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
-
-    
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
-                  <!-- Dropdown Menu -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                      <!-- <button><i class="far fa-user"> Serigne Saliou Dione</i></button> -->
-                      <button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-user"></i> Serigne Saliou Dione</button>
-                      
-                      <!-- <span class="badge badge-danger navbar-badge">3</span> -->
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-       
-                      <div class="dropdown-divider"></div>
-                      <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                          <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                          <div class="media-body">
-                            <h3 class="dropdown-item-title">
-                              Nora Silvester
-                              <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                            </h3>
-                            <p class="text-sm">The subject goes here</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                          </div>
-                        </div>
-                        <!-- Message End -->
-                      </a>
-      
-      
-      
-                      <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                          <div class="media-body">
-                            <button  type="button" class="btn btn-outline-primary btn-block btn-sm"> <i class="fa fa-lock"></i>  Fermer la session</button>     
-                          </div>
-                        </div>
-                        <!-- Message End -->
-                      </a>
-                   
-                    </div>
-                  </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Include menu début -->
-  <?php
+ <!-- Include navbar et menu début -->
+ <?php
+    include('../../../navbar.php');
     include('../../../menu.php');
   ?>
-  <!-- Include menu fin -->
-
-
-
+  <!-- Include navbar et menu fin -->
 
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -161,104 +62,7 @@
               <!-- <li><button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-plus"></i> ajouter</button></li> -->
               <li>
                 <button type="button" class="btn btn-outline-primary btn-block btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="@mdo"><i class="fa fa-plus"></i> ajouter</button>
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter utilisateur</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form id="monForm">
-                         
-                          <div class="row">
-                            <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
-                              <div class="form-group">
-                                <label for="prenom" class="col-form-label">Prénom</label>
-                                <input required type="text" class="form-control" id="prenom" name="prenom">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="nom" class="col-form-label">Nom</label>
-                                <input required type="text" class="form-control" id="nom" name="nom">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="telephone" class="col-form-label">Téléphone</label>
-                                <input required type="text" class="form-control" id="telephone" name="telephone">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="email" class="col-form-label">Email</label>
-                                <input required type="email" class="form-control" id="email" name="email">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="adresse" class="col-form-label">Adresse</label>
-                                <input required type="adresse" class="form-control" id="adresse" name="adresse">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="nom" class="col-form-label">Nom</label>
-                                <input required type="text" class="form-control" id="nom" name="nom">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label>Role</label>
-                                <select required="" class="form-control select2" style="width: 100%;" id="idRole" name="idRole">
-                      
-                                  <option value="" selected disabled>-Choisir-</option>
-                                    <?php 
-                                        require_once('../../../php/classe/classeUtilisateur.php');
-                                        $Utilisateur = new Utilisateur();
-                                        $list = $Utilisateur->listRole();
-                                        foreach($list as $value){
-                                    ?>
-                                  <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
-                                    <?php }
-                                    ?>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="login" class="col-form-label">Login</label>
-                                <input type="text" class="form-control" id="login" name="login">
-                              </div>
-                            </div>
-                            <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="motDePasse" class="col-form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="motDePasse" name="motDePasse">
-                              </div>
-                            </div>
-                            <!-- <div class="col-6 col-sm-6">
-                              <div class="form-group">
-                                <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
-                                <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
-                              </div>
-                            </div> -->
-                          </div>
-                          
-                          <input type="hidden" name="ajouter">
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn btn-primary" name="action">Créer</button>
-                          </div>
-                        </form>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
+
               </li>
             </ol>
           </div>
@@ -309,25 +113,32 @@
                     <td><?php echo $value['email'] ?></td>
                     <td><?php echo $value['role'] ?></td>
                     <td><?php echo $value['login'] ?></td>
-                    
-                    <td class="project-state">
-                            <span class="badge badge-success">Actif</span>
-                    </td>   
-                    <!-- <td><?php echo $value['idRole'] ?></td> -->
+                   
+                    <td class="project-state"><?php
+                    if($value['etat'] == '1')
+                    {
+                      echo '<span class="badge badge-success">Actif</span>';
+                    }
+                    else
+                    {
+                      echo '<span class="badge badge-danger">Désactivé</span>';
+                    }
+                    ?></td>
+
                     <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
+                          <a  class="btn btn-primary btn-sm"  href="#"  >
                               <i class="fas fa-eye">
                               </i>
                               Voir
                           </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
+                          <a onclick="modifier('<?php echo $value['idUtilisateur'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                              <!-- <i class="fas fa-pencil-alt">
+                              </i> -->
                               Modifier
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
+                          <a onclick="supprimer('<?php echo $value['idUtilisateur'] ?>')" class="btn btn-danger btn-sm" href="#">
+                              <!-- <i class="fas fa-trash">
+                              </i> -->
                               Supprimer
                           </a>
                     </td>
@@ -362,6 +173,113 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+    <!-- modals debut -->
+
+
+      <!-- ajouter utilisateur debut -->
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Ajouter utilisateur</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="monForm">
+                          
+                            <div class="row">
+                              <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
+                                <div class="form-group">
+                                  <label for="prenom" class="col-form-label">Prénom</label>
+                                  <input required type="text" class="form-control" id="prenom" name="prenom">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="nom" class="col-form-label">Nom</label>
+                                  <input required type="text" class="form-control" id="nom" name="nom">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="telephone" class="col-form-label">Téléphone</label>
+                                  <input required type="text" class="form-control" id="telephone" name="telephone">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="email" class="col-form-label">Email</label>
+                                  <input required type="email" class="form-control" id="email" name="email">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="adresse" class="col-form-label">Adresse</label>
+                                  <input required type="adresse" class="form-control" id="adresse" name="adresse">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Role</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idRole" name="idRole">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listRole();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="login" class="col-form-label">Login</label>
+                                  <input type="text" class="form-control" id="login" name="login">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="motDePasse" class="col-form-label">Mot de passe</label>
+                                  <input type="password" class="form-control" id="motDePasse" name="motDePasse">
+                                </div>
+                              </div>
+                              <!-- <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
+                                  <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
+                                </div>
+                              </div> -->
+                            </div>
+                            
+                            <input type="hidden" name="ajouter">
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                              <button type="submit" class="btn btn-primary" name="action">Créer</button>
+                            </div>
+                          </form>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ajouter utilisateur fin -->
+
+
+
+
+                 
+
+    <!-- modals fin -->
+
+
+
   </div>
   <!-- /.content-wrapper -->
 
@@ -378,3 +296,62 @@
 
 
 <!-- ./wrapper -->
+<script type="text/javascript">
+  
+  function supprimer(idElement){
+    Swal.fire({
+      title: 'Êtes vous sur?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          $.ajax({
+              type: "GET",
+              url: "../../controller/utilisateur.php?supprimer="+idElement, 
+              data: $(this).serialize(),
+              success: function(msg){
+                  if(parseInt(msg)==1){
+                    Swal.fire(
+                      'Supprimé!',
+                      'Cet utilisateur a été supprimée.',
+                      'success'
+                    )
+                    location.reload();
+                  }else{ 
+                    // Swal.fire(
+                    //   'Deleted!',
+                    //   'Your file has been deleted.',
+                    //   'success'
+                    // )
+                  }
+              },
+              error: function(){
+                  // Swal.fire(
+                  //   'Deleted!',
+                  //   'Your file has been deleted.',
+                  //   'success'
+                  // )
+              }
+          });
+      }
+    })
+  }
+
+
+  function modifier(prenom,nom,telephone,email,adresse,idRole,login,motDePasse,idElement){
+    $("#prenom2").val(prenom);
+    $("#nom2").val(nom);
+    $("#telephone2").val(telephone);
+    $("#email2").val(email);
+    $("#adresse2").val(adresse);
+    $("#idRole2").val(idRole);
+    $("#login2").val(login);
+    $("#motDePasse2").val(motDePasse);
+    $("#modifier").val(idElement);
+  }
+
+</script>

@@ -63,7 +63,7 @@
 		// Liste des status
 		public function listStatus(){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT libelle FROM status");
+			$requete = Connexion::Connect()->query("SELECT * FROM status");
 
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
@@ -80,6 +80,16 @@
 			return($res);
 		}
 
+
+		// Modification des valeurs
+		public function updateStatus($idStatus,$libelle) {
+			$requete = Connexion::Connect()->prepare('UPDATE status SET libelle = ? WHERE idStatus = ?
+						');
+			$requete->bindValue(1, $libelle);
+			$requete->bindValue(2, $idStatus);
+			$res = $requete->execute(); 
+			return($res);
+		}
 		
 		
 	}

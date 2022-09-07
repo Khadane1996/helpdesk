@@ -1,5 +1,5 @@
 <?php
-    @session_start();
+    // @session_start();
     // require_once("functions.php");
     
 
@@ -22,7 +22,10 @@
         echo $Utilisateur->addRole($_POST['libelle']);
     }
     else if(isset($_POST['modifier'])){
-       
+        require_once('../classe/classeUtilisateur.php');
+        $Utilisateur = new Utilisateur();
+
+        echo $Utilisateur->updateRole($_POST['modifier'], $_POST['libelle']);
     }else{
         echo 2;
     }

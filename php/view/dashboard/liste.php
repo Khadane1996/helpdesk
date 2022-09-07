@@ -70,12 +70,19 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>15</h3>
-
-                                    <p>TICKETS OUVERTS</p>
+                                  <?php 
+                                        require_once('../../../php/classe/classeTicket.php');
+                                        $Ticket = new Ticket();
+                                        $list = $Ticket->listTicketOuvert();
+                                        $nombre = count($list);
+                                        echo "<h3>$nombre</h3>";                         
+                                  ?> 
+                                             
+                                  <p>TICKETS OUVERTS</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-bag"></i>
+                                    <i class="ion ion-alert"></i>
+                                    <!-- <img src="probleme.png"  width="50" height="50"> -->
                                 </div>
                                 <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -85,13 +92,18 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
-                                    <h3>53</h3>
-
+                                  <?php 
+                                      require_once('../../../php/classe/classeTicket.php');
+                                      $Ticket = new Ticket();
+                                      $list = $Ticket->listTicketFerme();
+                                      $nombre = count($list);
+                                      echo "<h3>$nombre</h3>";                         
+                                  ?> 
                                     <p>TICKETS FERMÉS</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
+                                    <i class="ion ion-android-checkbox-outline"></i>
+                                  
                                 </div>
                                 <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -101,14 +113,19 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
-
-                                    <p>User Registrations</p>
+                                <?php 
+                                      require_once('../../../php/classe/classeUtilisateur.php');
+                                      $Utilisateur = new Utilisateur();
+                                      $list = $Utilisateur->listUtilisateur();
+                                      $nombre = count($list);
+                                      echo "<h3>$nombre</h3>";                         
+                                  ?> 
+                                    <p>UTILISATEURS</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="../utilisateur/liste.php" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -116,14 +133,19 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>2</h3>
-
+                                <?php 
+                                      require_once('../../../php/classe/classeUtilisateur.php');
+                                      $Utilisateur = new Utilisateur();
+                                      $list = $Utilisateur->listAgent();
+                                      $nombre = count($list);
+                                      echo "<h3>$nombre</h3>";                         
+                                  ?> 
                                     <p>AGENTS</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                                    <i class="ion ion-settings"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="../agent/liste.php" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -220,70 +242,28 @@
                 <table class="table table-head-fixed text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>User</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Reason</th>
+                      <th>Nom complet</th>
+                      <th> </th>
+                     
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>183</td>
                       <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td><a href="#">13 Ouverts</a></td>
                     </tr>
                     <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>John Doe</td>
+                      <td><a href="#">13 Ouverts</a></td>
                     </tr>
                     <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>Jason Faye</td>
+                      <td><a href="#">4 Ouverts</a></td>
+                    </tr> <tr>
+                      <td>James Bond</td>
+                      <td><a href="#">4 Ouverts</a></td>
                     </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>134</td>
-                      <td>Jim Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>494</td>
-                      <td>Victoria Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>832</td>
-                      <td>Michael Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>982</td>
-                      <td>Rocky Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+             
                   </tbody>
                 </table>
               </div>
