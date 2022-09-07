@@ -155,7 +155,7 @@
                               </i>
                               Voir
                           </a>
-                          <a onclick="modifier('<?php echo $value['description'] ?>',<?php echo $value['idPriorite'] ?>',<?php echo $value['idCategorie'] ?>',<?php echo $value['idStatus'] ?>',<?php echo $value['idAuteur'] ?>',<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                          <a onclick="modifier('<?php echo $value['description'] ?>','<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
                               <!-- <i class="fas fa-pencil-alt">
                               </i> -->
                               Modifier
@@ -312,12 +312,7 @@
                                 </div>
                               </div>
                               
-                              <!-- <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
-                                  <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
-                                </div>
-                              </div> -->
+                            
                             </div>
                             
                             <input type="hidden" name="ajouter">

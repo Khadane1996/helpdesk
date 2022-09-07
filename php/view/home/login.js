@@ -13,8 +13,9 @@ $(function(){
                     'Connexion réussie!',
                     'success'
                     )
-                    $(document).click(function(){
+                    $(document).ready(function() {
                         window.location.href = "php/view/dashboard/liste.php";
+                   
                         // window.location.reload();
                     });
                 }else if(parseInt(msg)==0){ 
