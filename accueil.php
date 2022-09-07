@@ -129,7 +129,7 @@
                     <!-- Message Start -->
                     <div class="media">
                       <div class="media-body">
-                        <a href="deconnexion.php" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-lock"></i>  Fermer la session</a>       
+                        <a type="button" href="deconnexion.php" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-lock"></i>  Fermer la session</a>       
                       </div>
                     </div>
                   <!-- Message End -->
