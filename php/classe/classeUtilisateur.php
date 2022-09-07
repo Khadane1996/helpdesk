@@ -347,11 +347,8 @@
 		public function loginEmployeExist($email, $telephone){ // $login
 	        $list = array();
 	        $requete = Connexion::Connect()->query("SELECT email FROM utilisateur WHERE email = \"$email\" 
-
 	        	AND telephone != \"$telephone\"
-
 	        	
-
 	        ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
@@ -363,6 +360,7 @@
 	         else
 	            return false;    
 	    }
+
 
 
         // Ajout de role
