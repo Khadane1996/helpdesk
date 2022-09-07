@@ -126,12 +126,13 @@
                     ?></td>
 
                     <td class="project-actions text-right">
-                          <a  class="btn btn-primary btn-sm"  href="#"  >
+                          <!-- <a  class="btn btn-primary btn-sm"  href="#"  >
                               <i class="fas fa-eye">
                               </i>
                               Voir
-                          </a>
-                          <a onclick="modifier('<?php echo $value['idUtilisateur'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                          </a> -->
+                          
+                          <a onclick="modifier('<?php echo $value['prenom'] ?>','<?php echo $value['nom'] ?>','<?php echo $value['telephone'] ?>','<?php echo $value['email'] ?>','<?php echo $value['adresse'] ?>','<?php echo $value['idRole'] ?>','<?php echo $value['login'] ?>','<?php echo $value['motDePasse'] ?>','<?php echo $value['idUtilisateur'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
                               <!-- <i class="fas fa-pencil-alt">
                               </i> -->
                               Modifier
@@ -179,100 +180,192 @@
 
       <!-- ajouter utilisateur debut -->
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Ajouter utilisateur</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form id="monForm">
-                          
-                            <div class="row">
-                              <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
-                                <div class="form-group">
-                                  <label for="prenom" class="col-form-label">Prénom</label>
-                                  <input required type="text" class="form-control" id="prenom" name="prenom">
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="nom" class="col-form-label">Nom</label>
-                                  <input required type="text" class="form-control" id="nom" name="nom">
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="telephone" class="col-form-label">Téléphone</label>
-                                  <input required type="text" class="form-control" id="telephone" name="telephone">
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="email" class="col-form-label">Email</label>
-                                  <input required type="email" class="form-control" id="email" name="email">
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="adresse" class="col-form-label">Adresse</label>
-                                  <input required type="adresse" class="form-control" id="adresse" name="adresse">
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label>Role</label>
-                                  <select required="" class="form-control select2" style="width: 100%;" id="idRole" name="idRole">
-                        
-                                    <option value="" selected disabled>-Choisir-</option>
-                                      <?php 
-                                          require_once('../../../php/classe/classeUtilisateur.php');
-                                          $Utilisateur = new Utilisateur();
-                                          $list = $Utilisateur->listRole();
-                                          foreach($list as $value){
-                                      ?>
-                                    <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
-                                      <?php }
-                                      ?>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="login" class="col-form-label">Login</label>
-                                  <input type="text" class="form-control" id="login" name="login">
-                                </div>
-                              </div>
-                              <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="motDePasse" class="col-form-label">Mot de passe</label>
-                                  <input type="password" class="form-control" id="motDePasse" name="motDePasse">
-                                </div>
-                              </div>
-                              <!-- <div class="col-6 col-sm-6">
-                                <div class="form-group">
-                                  <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
-                                  <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
-                                </div>
-                              </div> -->
-                            </div>
-                            
-                            <input type="hidden" name="ajouter">
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                              <button type="submit" class="btn btn-primary" name="action">Créer</button>
-                            </div>
-                          </form>
-                        </div>   
-                      </div>
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ajouter utilisateur</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="monForm">
+              
+                <div class="row">
+                  <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
+                    <div class="form-group">
+                      <label for="prenom" class="col-form-label">Prénom</label>
+                      <input required type="text" class="form-control" id="prenom" name="prenom">
                     </div>
                   </div>
-                  <!-- ajouter utilisateur fin -->
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="nom" class="col-form-label">Nom</label>
+                      <input required type="text" class="form-control" id="nom" name="nom">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="telephone" class="col-form-label">Téléphone</label>
+                      <input required type="text" class="form-control" id="telephone" name="telephone">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="email" class="col-form-label">Email</label>
+                      <input required type="email" class="form-control" id="email" name="email">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="adresse" class="col-form-label">Adresse</label>
+                      <input required type="adresse" class="form-control" id="adresse" name="adresse">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label>Role</label>
+                      <select required="" class="form-control select2" style="width: 100%;" id="idRole" name="idRole">
+            
+                        <option value="" selected disabled>-Choisir-</option>
+                          <?php 
+                              require_once('../../../php/classe/classeUtilisateur.php');
+                              $Utilisateur = new Utilisateur();
+                              $list = $Utilisateur->listRole();
+                              foreach($list as $value){
+                          ?>
+                        <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
+                          <?php }
+                          ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="login" class="col-form-label">Login</label>
+                      <input type="text" class="form-control" id="login" name="login">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="motDePasse" class="col-form-label">Mot de passe</label>
+                      <input type="password" class="form-control" id="motDePasse" name="motDePasse">
+                    </div>
+                  </div>
+                  <!-- <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
+                      <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
+                    </div>
+                  </div> -->
+                </div>
+                
+                <input type="hidden" name="ajouter">
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  <button type="submit" class="btn btn-primary" name="action">Créer</button>
+                </div>
+              </form>
+            </div>   
+          </div>
+        </div>
+      </div>
+      <!-- ajouter utilisateur fin -->
 
+      <!-- Modifier utilisateur début -->
 
-
+      <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modifier utilisateur</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="monFormMod">
+              
+                <div class="row">
+                  <div class="col-6 col-sm-6"> <!-- col s12 m3 l3  -->
+                    <div class="form-group">
+                      <label for="prenom" class="col-form-label">Prénom</label>
+                      <input required type="text" class="form-control" id="prenom2" name="prenom">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="nom" class="col-form-label">Nom</label>
+                      <input required type="text" class="form-control" id="nom2" name="nom">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="telephone" class="col-form-label">Téléphone</label>
+                      <input required type="text" class="form-control" id="telephone2" name="telephone">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="email" class="col-form-label">Email</label>
+                      <input required type="email" class="form-control" id="email2" name="email">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="adresse" class="col-form-label">Adresse</label>
+                      <input required type="adresse" class="form-control" id="adresse2" name="adresse">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label>Role</label>
+                      <select required="" class="form-control select2" style="width: 100%;" id="idRole2" name="idRole">
+            
+                        <option value="" selected disabled>-Choisir-</option>
+                          <?php 
+                              require_once('../../../php/classe/classeUtilisateur.php');
+                              $Utilisateur = new Utilisateur();
+                              $list = $Utilisateur->listRole();
+                              foreach($list as $value){
+                          ?>
+                        <option value="<?php echo $value['idRole'] ?>"><?php echo $value['libelle'] ?></option>
+                          <?php }
+                          ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="login" class="col-form-label">Login</label>
+                      <input type="text" class="form-control" id="login2" name="login">
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="motDePasse" class="col-form-label">Mot de passe</label>
+                      <input type="password" class="form-control" id="motDePasse2" name="motDePasse">
+                    </div>
+                  </div>
+                  <!-- <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                      <label for="cmotDePasse" class="col-form-label">Confirmer mot de passe</label>
+                      <input type="password" class="form-control" id="cmotDePasse" name="cmotDePasse">
+                    </div>
+                  </div> -->
+                </div>
+                
+                <input type="hidden" name="modifier" id="modifier">
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  <button type="submit" class="btn btn-primary" name="action">Modifier</button>
+                </div>
+              </form>
+            </div>   
+          </div>
+        </div>
+      </div>
+      <!-- Modifier utilisateur fin -->
 
                  
 
@@ -342,7 +435,7 @@
   }
 
 
-  function modifier(prenom,nom,telephone,email,adresse,idRole,login,motDePasse,idElement){
+  function modifier(prenom,nom,telephone,email,adresse,idRole,login,motDePasse,idUtilisateur){
     $("#prenom2").val(prenom);
     $("#nom2").val(nom);
     $("#telephone2").val(telephone);
@@ -351,7 +444,7 @@
     $("#idRole2").val(idRole);
     $("#login2").val(login);
     $("#motDePasse2").val(motDePasse);
-    $("#modifier").val(idElement);
+    $("#modifier").val(idUtilisateur);
   }
 
 </script>

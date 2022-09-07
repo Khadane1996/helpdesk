@@ -36,13 +36,9 @@
         $Utilisateur = new Utilisateur();
         // if ($Utilisateur->emailExist2($_POST['email'], $_POST['modifier']) == false && $Utilisateur->loginExist2($_POST['login'], $_POST['modifier']) == false) {
             
-            $Utilisateur = new Utilisateur($_POST['modifier'], $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $_POST['motDePasse']);
-            $res = $Utilisateur->updateUtilisateur();
-            if($res == 1){
-                echo 10;
-            }else{
-                echo $res;
-            }
+            $Utilisateur = new Utilisateur();
+            echo $Utilisateur->updateUtilisateur($_POST['modifier'], $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $_POST['motDePasse']);
+          
         // }
         // else if ($Utilisateur->loginExist2(htmlspecialchars($_POST['login']), htmlspecialchars($_POST['modifier'])) == true) {
         //      echo 2;
@@ -50,5 +46,7 @@
         // else if ($Utilisateur->emailExist2(htmlspecialchars($_POST['email']), htmlspecialchars($_POST['modifier'])) == true){
         //     echo 3;
         // }
+    }else{
+        echo 33;
     }
 ?>

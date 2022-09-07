@@ -8,11 +8,11 @@ $(function(){
             data: $(this).serialize(),
             success: function(msg){
                 if(parseInt(msg)==1){
-                    Swal.fire(
-                    'Réussi!',
-                    'Cet utilisateur a été ajouté avec succès!',
-                    'success'
-                    )
+                    // Swal.fire(
+                    // 'Réussi!',
+                    // 'Cet utilisateur a été ajouté avec succès!',
+                    // 'success'
+                    // )
                     $(document).click(function(){
                         // window.location.href = "creche_liste";
                         window.location.reload();
@@ -45,7 +45,6 @@ $(function(){
             url: "../../controller/utilisateur.php", //process to mail
             data: $(this).serialize(),
             success: function(msg){
-                alert(msg);
                 if(parseInt(msg)==1){
                     Swal.fire(
                     'Réussi!',
