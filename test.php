@@ -196,7 +196,7 @@ if (isset($_POST['submit'])) {
                   <!-- Message Start -->
                   <div class="media">
                     <div class="media-body">
-                      <button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-lock"></i>  Fermer la session</button>       
+                      <button  type="button" class="btn btn-outline-primary btn-block btn-sm"> <i class="fa fa-lock"></i>  Fermer la session</button>     
                     </div>
                   </div>
                 <!-- Message End -->
