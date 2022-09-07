@@ -171,28 +171,28 @@
 
 
 		// Modification des valeurs
-		public function updateUtilisateur() {
-			if($this->is_sha1($this->getMotDePasse()))
-				$password = $this->getMotDePasse();
+		public function updateUtilisateur($idUtilisateur, $prenom, $nom, $email, $adresse, $telephone, $idRole, $login, $motDePasse) {
+			if($this->is_sha1($motDePasse))
+				$password = $motDePasse;
 			else
-				$password = sha1($this->getMotDePasse());
+				$password = sha1($motDePasse);
 			
 
-			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
+			$requete = Connexion::Connect()->prepare('UPDATE utilisateur SET prenom = ?, nom = ?, email = ?, adresse = ?, telephone = ?, idRole = ?, login = ?, motDePasse = ? WHERE idUtilisateur = ?
 						');
-			$requete->bindValue(1, $this->getPrenom());
-			$requete->bindValue(2, $this->getNom());
-			$requete->bindValue(3, $this->getEmail());
-			$requete->bindValue(4, $this->getAdresse());
-			$requete->bindValue(5, $this->getTelephone());
-			$requete->bindValue(6, $this->getIdRole());
-			$requete->bindValue(7, $this->getLogin());
+			$requete->bindValue(1, $prenom);
+			$requete->bindValue(2, $nom); 
+			$requete->bindValue(3, $email);
+			$requete->bindValue(4, $adresse);
+			$requete->bindValue(5, $telephone);
+			$requete->bindValue(6, $idRole);
+			$requete->bindValue(7, $login);
 			$requete->bindValue(8, $password);
-			$requete->bindValue(9, $this->getIdUtilisateur());
-
+			$requete->bindValue(9, $idUtilisateur);
 			$res = $requete->execute(); 
 			return($res);
 		}
+		
 		// Suppression des valeurs
 		public function deleteUtilisateur($code){
 			$requete = Connexion::Connect()->prepare('DELETE FROM utilisateur  WHERE idUtilisateur = ?');
@@ -394,8 +394,3 @@
 			
 
  ?>
-
-
-		
-		
-		
