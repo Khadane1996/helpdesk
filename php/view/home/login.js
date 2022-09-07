@@ -14,7 +14,7 @@ $(function(){
                     'success'
                     )
                     $(document).click(function(){
-                        window.location.href = "php/view/utilisateur/liste.php";
+                        window.location.href = "php/view/dashboard/liste.php";
                         // window.location.reload();
                     });
                 }else if(parseInt(msg)==0){ 
