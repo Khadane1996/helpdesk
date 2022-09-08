@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php
+@session_start();  
+
+if(!isset($_SESSION['helpdeskconnected'])){
+
+    header("location:../../../index.php");
+
+}
+
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">

@@ -23,9 +23,9 @@
     <div class="card-body">
       <p class="login-box-msg">INSCRIPTION</p>
 
-      <form  action="" method="POST">
+      <form  id="monFormIns">
         <div class="input-group mb-3">
-          <input type="text" class="form-control"  name="prenom" placeholder="Prénom">
+          <input type="text" class="form-control"  id="prenom" name="prenom" placeholder="Prénom">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control"  name="nom" placeholder="Nom">
+          <input type="text" class="form-control"  id="nom" name="nom" placeholder="Nom">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control"  name="login" placeholder="Login">
+          <input type="text" class="form-control"  id="login" name="login" placeholder="Login">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" name="email" placeholder="Adresse email">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Adresse email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -58,7 +58,7 @@
         </div>      
              
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="motDePasse" placeholder="Mot de passe">
+          <input type="password" class="form-control" id="motDePasse" name="motDePasse" placeholder="Mot de passe">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -66,28 +66,32 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="cmotDePasse" placeholder="Retaper mot de passe">
+          <input type="password" class="form-control" id="motDePasse2" name="motDePasse2" placeholder="Retaper mot de passe">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
-        <div class="input-group mb-3" name="idRole" value="3">
+        
+        <div class="input-group mb-3" id="idRole" name="idRole" value="3">
                           <!-- <div class="form-group">
                            
-                            <select class="form-control" name="idRole">           
+                            <select class="form-control" id="" name="idRole">           
                               <option value="1"> Admininstrateur</option>
                               <option value="2"> Technicien </option>
                               <option value="3" selected> Utilisateur Simple </option>
                             </select>
                           </div> -->
-        </div>   
+        </div> 
+        <input type="hidden" name="adresse" id="adresse" value="1">
+        <input type="hidden" name="telephone" id="telephone" value="1">  
         <div class="row">
           
           <!-- /.col -->
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block" name="submit" >S'INSCRIRE</button>
+          <div class="col-12 ">
+            <input type="hidden" name="ajouter">
+            <button type="submit" class="btn btn-primary btn-block "  name="action" >S'INSCRIRE</button>
           </div>
           <!-- /.col -->
         </div>
@@ -108,5 +112,6 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<script src="../../../php/view/utilisateur/utilisateur.js"></script>
 </body>
 </html>

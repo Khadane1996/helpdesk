@@ -88,7 +88,7 @@
                   <tr>
                     <th>&#8470;</th>
                     <th>Nom complet</th>
-                    <th>Téléphone</th>
+                    <!-- <th>Téléphone</th> -->
                     <th>Email</th>
                     <th>Profil</th>
                     <th>Login</th>
@@ -109,7 +109,7 @@
                     ?>
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $value['prenom']." " .$value['nom'] ?> </td>
-                    <td><?php echo $value['telephone'] ?></td>
+                    <!-- <td><?php echo $value['telephone'] ?></td> -->
                     <td><?php echo $value['email'] ?></td>
                     <td><?php echo $value['role'] ?></td>
                     <td><?php echo $value['login'] ?></td>
@@ -152,7 +152,7 @@
 
                     <th>&#8470;</th>
                     <th>Nom complet</th>
-                    <th>Téléphone</th>
+                    <!-- <th>Téléphone</th> -->
                     <th>Email</th>
                     <th>Profil</th>
                     <th>Login</th>
