@@ -95,7 +95,7 @@ WHERE
 
 
 CREATE OR REPLACE VIEW vagent AS
-SELECT 
+SELECT  DISTINCT 
   u.prenom,
   u.nom,
   u.email,
@@ -110,6 +110,20 @@ FROM
   (SELECT idAssigne FROM ticket) t
 
 WHERE   
-  u.idUtilisateur = t.idAssigne
+  u.idUtilisateur = t.idAssigne 
 
 
+
+
+-- SELECT DISTINCT
+--  t.*,
+--  u.prenom,
+--  u.nom
+
+
+-- FROM
+--  (SELECT * FROM ticket) t,
+--  (SELECT * FROM utilisateur WHERE idRole='2') u
+
+-- WHERE
+--   u.idUtilisateur = t.idAssigne 

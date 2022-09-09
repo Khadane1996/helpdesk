@@ -116,15 +116,15 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <?php 
                       require_once('../../../php/classe/classeUtilisateur.php');
                       $Utilisateur = new Utilisateur();
-                      $list = $Utilisateur->listAgent();
+                      $list = $Utilisateur->vueAgent();
                       $i = 1;
                       foreach($list as $value){
                     ?>
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $value['prenom']." " .$value['nom'] ?> </td>
                     <td><?php echo $value['email'] ?></td>
-                    <td>2</td>
-                    <td>5</td>
+                    <td><?php echo $value['tickets_ouverts'] ?></td>
+                    <td><?php echo $value['tickets_fermes'] ?></td>
                     
                     <td class="project-state"><?php
                     if($value['etat'] == '1')

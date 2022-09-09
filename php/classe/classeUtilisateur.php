@@ -214,6 +214,7 @@
 			return $list;
 		}
 
+		// Liste des agents
 		public function listAgent(){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur  where idRole='2'");
@@ -224,6 +225,7 @@
 			return $list;
 		}
 
+		// Liste des agents actifs
 		public function listAgentActif(){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur  where idRole='2' AND etat='1'");
@@ -238,6 +240,19 @@
 		public function listRole(){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM role");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+
+		// vue agent
+		public function vueAgent(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vagent");
 
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {

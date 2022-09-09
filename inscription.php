@@ -74,28 +74,32 @@
           </div>
         </div>
         
-        <div class="input-group mb-3" id="idRole" name="idRole" value="3">
-                          <!-- <div class="form-group">
+        <!-- <div class="input-group mb-3" id="idRole" name="idRole" value="3">
+                          <div class="form-group">
                            
                             <select class="form-control" id="" name="idRole">           
                               <option value="1"> Admininstrateur</option>
                               <option value="2"> Technicien </option>
                               <option value="3" selected> Utilisateur Simple </option>
                             </select>
-                          </div> -->
-        </div> 
+                          </div>
+        </div>  -->
+        <input type="hidden" name="idRole" id="idRole" value="3">
         <input type="hidden" name="adresse" id="adresse" value="1">
         <input type="hidden" name="telephone" id="telephone" value="1">  
+        <input type="hidden" name="ajouter">
+
         <div class="row">
           
           <!-- /.col -->
           <div class="col-12 ">
-            <input type="hidden" name="ajouter">
-            <button type="submit" class="btn btn-primary btn-block "  name="action" >S'INSCRIRE</button>
+            <button type="submit" class="btn btn-primary btn-block"  name="action" >S'INSCRIRE</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
+
+      
 
 
 
@@ -112,6 +116,7 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-<script src="../../../php/view/utilisateur/utilisateur.js"></script>
+
+<script src="php/view/utilisateur/utilisateur.js"></script>
 </body>
 </html>
