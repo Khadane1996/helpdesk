@@ -226,7 +226,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                         </div>
                         <div class="modal-body">
                           <form id="monForm">
-                  
+                            <div class="row">
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Priorite</label>
@@ -329,12 +329,13 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               </div>
                               
                             
-                            </div>
+                               </div>
                             
-                            <input type="hidden" name="ajouter">
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                              <button type="submit" class="btn btn-primary" name="action">Créer</button>
+                                <input type="hidden" name="ajouter">
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                  <button type="submit" class="btn btn-primary" name="action">Créer</button>
+                                </div>
                             </div>
                           </form>
                         </div>   
@@ -355,6 +356,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                         </div>
                         <div class="modal-body">
                           <form id="monFormMod">
+                          <div class="row">
                             <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Priorite</label>
@@ -463,6 +465,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                               <button type="submit" class="btn btn-primary" name="action">Modifier</button>
                             </div>
+                          </div>
                           </form>
                         </div>   
                       </div>
