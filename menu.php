@@ -29,6 +29,11 @@
               </p>
             </a>
           </li>
+          <?php
+
+          if(isset($_SESSION['helpdeskadministrateur'])){
+
+          ?>
           <li class="nav-item">
             <a href="../../../php/view/utilisateur/liste.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
@@ -47,6 +52,7 @@
               </p>
             </a>
           </li>
+          <?php } ?>
           <li class="nav-item">
             <a href="../../../php/view/ticket/liste.php" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
@@ -57,6 +63,11 @@
             </a>
           </li>
 
+          <?php
+
+          if(isset($_SESSION['helpdeskadministrateur'])){
+
+          ?>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
@@ -99,6 +110,7 @@
                   </li>
                 </ul>
           </li>
+           <?php } ?>
           
 
         </ul>

@@ -81,6 +81,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                             <div class="small-box bg-info">
                                 <div class="inner">
                                   <?php 
+                                        
                                         require_once('../../../php/classe/classeTicket.php');
                                         $Ticket = new Ticket();
                                         $list = $Ticket->listTicketOuvert();
@@ -97,6 +98,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                 <a href="#" class="small-box-footer">Plus d'info<i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
+                          
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
@@ -119,6 +121,11 @@ if(!isset($_SESSION['helpdeskconnected'])){
                             </div>
                         </div>
                         <!-- ./col -->
+                        <?php
+
+                          if(isset($_SESSION['helpdeskadministrateur'])){
+
+                        ?>
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-warning">
@@ -139,6 +146,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                             </div>
                         </div>
                         <!-- ./col -->
+                        
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-danger">
@@ -159,6 +167,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                             </div>
                         </div>
                         <!-- ./col -->
+                        <?php } ?>
                     </div>
                     <div class="row">
           <div class="col-6">

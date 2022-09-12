@@ -75,10 +75,14 @@ if(!isset($_SESSION['helpdeskconnected'])){
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <!-- <li><button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-plus"></i> ajouter</button></li> -->
+              <?php
+                if(isset($_SESSION['helpdeskadministrateur']) || isset($_SESSION['helpdesksimple'])){
+              ?>
               <li>
                 <button type="button" class="btn btn-outline-primary btn-block btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="@mdo"><i class="fa fa-plus"></i> ajouter</button>
                
               </li>
+              <?php } ?>
             </ol>
           </div>
         </div>
@@ -165,11 +169,13 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               </i>
                               Voir
                           </a>
+                          
                           <a onclick="modifier('<?php echo $value['description'] ?>','<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
                               <!-- <i class="fas fa-pencil-alt">
                               </i> -->
                               Modifier
                           </a>
+                          
                           <a onclick="supprimer('<?php echo $value['idTicket'] ?>')" class="btn btn-danger btn-sm" href="#">
                               <!-- <i class="fas fa-trash">
                               </i> -->
