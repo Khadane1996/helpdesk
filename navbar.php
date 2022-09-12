@@ -69,7 +69,7 @@
                         <!-- Profil Start -->
                         <div class="media">
                           <div class="media-body">
-                            <button  onclick="location.href='#';" type="button" class="btn btn-outline-primary btn-block btn-sm" > <i class="fa fa-user-cog"></i>  Profil</button>     
+                            <button  onclick="location.href='#';" type="button" class="btn .btn-lg btn-block btn-sm" > <i class="fa fa-user-cog"></i>  Profil</button>     
                           </div>
                         </div>
                         <!-- Profil End -->
