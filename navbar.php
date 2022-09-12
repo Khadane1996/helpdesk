@@ -57,39 +57,34 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                       <!-- <button><i class="far fa-user"> Serigne Saliou Dione</i></button> -->
-                      <button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-user"></i> Serigne Saliou Dione</button>
-                      
+                      <!-- <button type="button" class="btn btn-outline-primary btn-block btn-sm"><i class="fa fa-user"></i><?php echo $_SESSION['helpdeskprenom'].' '.$_SESSION['helpdesknom']; ?></button> -->
+                     <button type="button" class="btn btn-outline-primary btn-block btn-sm"><?php echo $_SESSION['helpdeskprenom'].' '.$_SESSION['helpdesknom']; ?></button>
+
                       <!-- <span class="badge badge-danger navbar-badge">3</span> -->
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
        
                       <!-- <div class="dropdown-divider"></div> -->
                       <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <!-- <div class="media"> -->
-                          <!-- <img src="../../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"> -->
+                        <!-- Profil Start -->
+                        <div class="media">
                           <div class="media-body">
-                            <h4 style="text-align: center;">
-                            <span class="left text-sm text-warning"><i class="fas fa-user-cog"></i></span>
-                              Profil
-                            </h4>
-                            <!-- <p class="text-sm">The subject goes here</p> -->
-                            <!-- <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p> -->
+                            <button  onclick="location.href='#';" type="button" class="btn btn-outline-primary btn-block btn-sm" > <i class="fa fa-user-cog"></i>  Profil</button>     
                           </div>
-                        <!-- </div> -->
-                        <!-- Message End -->
+                        </div>
+                        <!-- Profil End -->
                       </a>
       
       
       
                       <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
+                        <!-- Déconnexion Start -->
                         <div class="media">
                           <div class="media-body">
                             <button  onclick="location.href='../../../deconnexion.php';" type="button" class="btn btn-outline-primary btn-block btn-sm" > <i class="fa fa-lock"></i>  Fermer la session</button>     
                           </div>
                         </div>
-                        <!-- Message End -->
+                        <!-- Déconnexion End -->
                       </a>
                    
                     </div>
