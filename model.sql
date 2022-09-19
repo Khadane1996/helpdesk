@@ -126,4 +126,4 @@ WHERE
 --  (SELECT * FROM utilisateur WHERE idRole='2') u
 
 -- WHERE
---   u.idUtilisateur = t.idAssigne 
+--   u.idUtilisateur = t.idAssigne

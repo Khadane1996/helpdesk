@@ -265,6 +265,10 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                 </div>
                               </div>
 
+                               <!-- vue admin début-->
+                              <?php
+                                if(isset($_SESSION['helpdeskadministrateur'])){
+                              ?>
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Status</label>
@@ -326,11 +330,80 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                       ?>
                                   </select>
                                 </div>
-                              </div>
+                              </div>   
+                              <?php } ?> 
+                              <!-- vue admin fin -->
                               
-                            
+                              <!-- vue utilisateur début -->
+                              <?php
+                                if(isset($_SESSION['helpdesksimple'])){
+                              ?>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Status</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idStatus" name="idStatus">
+                        
+                                    <option value="1" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeStatus.php');
+                                          $Status = new Status();
+                                          $list = $Status->listStatus();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="1"><?php echo $value['libelle'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Auteur</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idAuteur" name="idAuteur">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listUtilisateur();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $_SESSION['helpdeskprenom'].' '.$_SESSION['helpdesknom']; ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="description" class="col-form-label">Description</label>
+                                  <input type="text" class="form-control" id="description" name="description">
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Assigne à</label>
+                                  <select required="" class="form-control select2" style="width: 100%;" id="idAssigne" name="idAssigne">
+                        
+                                    <option value="" selected disabled>-Choisir-</option>
+                                      <?php 
+                                          require_once('../../../php/classe/classeUtilisateur.php');
+                                          $Utilisateur = new Utilisateur();
+                                          $list = $Utilisateur->listAgentActif();
+                                          foreach($list as $value){
+                                      ?>
+                                    <option value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom']. " " .$value['nom'] ?></option>
+                                      <?php }
+                                      ?>
+                                  </select>
+                                </div>
+                              </div>   
+                              <?php } ?> 
+                              <!-- vue utilisateur fin -->
+                                   
                                </div>
-                            
                                 <input type="hidden" name="ajouter">
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
