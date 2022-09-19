@@ -7,6 +7,7 @@ $(function(){
             url: "php/controller/logged.php", //process to mail
             data: $(this).serialize(),
             success: function(msg){
+                alert(msg)
                 if(parseInt(msg)==1){
                     Swal.fire(
                     'Réussi!',
@@ -18,6 +19,29 @@ $(function(){
                    
                         // window.location.reload();
                     });
+                }else if(parseInt(msg)==2){
+                    Swal.fire(
+                        'Réussi!',
+                        'Connexion réussie!',
+                        'success'
+                        )
+                        $(document).ready(function() {
+                            window.location.href = "php/view/dashboard/liste.php";
+                       
+                            // window.location.reload();
+                        });
+                }else if(parseInt(msg)==3){
+                    Swal.fire(
+                        'Réussi!',
+                        'Connexion réussie!',
+                        'success'
+                        )
+                        $(document).ready(function() {
+                            window.location.href = "php/view/dashboard/liste.php";
+                       
+                            // window.location.reload();
+                        });
+
                 }else if(parseInt(msg)==0){ 
                     Swal.fire(
                         'Désolé!',

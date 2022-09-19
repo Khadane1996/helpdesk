@@ -323,16 +323,16 @@
 
 	    public function isLogged($login, $mdp){
 	        $list = array();
-	        /*On crypte le mot de passe avant la vérification car il est crypté dan sla base de données
+	        /*On crypte le mot de passe avant la vérification car il est crypté dans la base de données
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
-	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
+	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
 	            $list[] = $donnee;
 			}
-			/*Si la taille du taille du tableau est différente de 0, l'vutilisateur est donc conecté. on revoie true*/
+			/*Si la taille du taille du tableau est différente de 0, l'utilisateur est donc conecté. on renvoie true*/
 	        if(count($list) != 0){
 	            return true;
 	        }
@@ -343,11 +343,11 @@
 
 	    public function isActivated($login, $mdp){
 	        $list = array();
-	        /*On crypte le mot de passe avant la vérification car il est crypté dan sla base de données
+	        /*On crypte le mot de passe avant la vérification car il est crypté dans la base de données
 			*On exécute la requete
 	        */
 	        $mdp = sha1($mdp);
-	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" AND etat = 1 ");
+	        $requete = Connexion::Connect()->query("SELECT motDePasse FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" AND etat = 1 ");
 	        /*On parcours le résultat*/
 	        foreach ($requete as $donnee){
 	            $list[] = $donnee;
@@ -364,7 +364,7 @@
 	    public function detailsUtilisateur($login, $mdp){
 			$list = array();
 
-			$requete = Connexion::Connect()->query("SELECT * FROM utilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
+			$requete = Connexion::Connect()->query("SELECT * FROM vutilisateur WHERE login = \"$login\" AND motDePasse = \"$mdp\" ");
 
 			foreach ($requete as $donnee){
 				$list[] = $donnee;

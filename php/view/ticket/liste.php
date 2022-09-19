@@ -535,12 +535,12 @@ if(!isset($_SESSION['helpdeskconnected'])){
     })
   }
 
-  function modifier(description,idPriorite,idCategorie,idStatus,idAuteur,idAssigne,idTicket){
-    $("#description2").val(description);
+  function modifier(idPriorite,idCategorie,idStatus,idAuteur,description,idAssigne,idTicket){
     $("#idPriorite2").val(idPriorite);
     $("#idCategorie2").val(idCategorie);
     $("#idStatus2").val(idStatus);
     $("#idAuteur2").val(idAuteur);
+    $("#description2").val(description);
     $("#idAssigne2").val(idAssigne);
     $("#modifier").val(idTicket);
   
