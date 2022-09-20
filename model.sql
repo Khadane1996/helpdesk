@@ -53,6 +53,18 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+CREATE TABLE `messagerie` (
+  `idMessagerie` int(11) NOT NULL,
+  `destinataire` text DEFAULT NULL,
+  `objet` varchar(255) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `pieceJointe` varchar(255) DEFAULT NULL,
+  `dateEnvoi` varchar(80) DEFAULT NULL,
+  `dateAjout` timestamp NOT NULL DEFAULT current_timestamp(),
+  `etat` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 CREATE VIEW vutilisateur AS
 SELECT u.*, r.libelle as role
 FROM utilisateur u, role r

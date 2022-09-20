@@ -343,7 +343,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   <label>Status</label>
                                   <select required="" class="form-control select2" style="width: 100%;" id="idStatus" name="idStatus">
                         
-                                    <option value="1" selected disabled>-Choisir-</option>
+                                    <option value="" selected disabled>-Choisir-</option>
                                       <?php 
                                           require_once('../../../php/classe/classeStatus.php');
                                           $Status = new Status();

@@ -131,7 +131,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     }
                     else
                     {
-                      echo '<span class="badge badge-danger">Désactivé</span>';
+                      echo '<span class="badge badge-danger">Inactif</span>';
                     }
                     ?></td>
 
