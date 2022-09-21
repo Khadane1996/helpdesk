@@ -85,11 +85,11 @@
       </form>
 
       <p class="mb-1">
-        <a href="forgot-password.html">Mot de passe oublié?</a>
+        <a href="reinitMDP.php">Mot de passe oublié?</a>
       </p>
-      <p class="mb-0">
+      <!-- <p class="mb-0">
         <a href="inscription.php" class="text-center">Je n'ai pas de compte</a>
-      </p>
+      </p> -->
     </div>
     <!-- /.card-body -->
   </div>
