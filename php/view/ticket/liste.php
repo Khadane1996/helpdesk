@@ -111,11 +111,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th>Catégorie</th>
                     <th>Status</th>
                     <th>Auteur</th>
-                    <?php
-                      if(isset($_SESSION['helpdeskadministrateur'])){
-                    ?>
                     <th>Assigné à</th>
-                    <?php } ?>
                     <th>Option</th>
                   </tr>
                   </thead>
@@ -123,14 +119,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <?php 
                     require_once('../../../php/classe/classeTicket.php');
                     $Ticket = new Ticket();
-                    if(isset($_SESSION['helpdeskadministrateur'])){
-                      $list = $Ticket->listTicket();
-                    }else if(isset($_SESSION['helpdesktechnicien'])){
-                      $list = $Ticket->listTicketTechnicien($_SESSION['helpdeskidUtilisateur']);
-                    }else if(isset($_SESSION['helpdesksimple'])){
-                      $list = $Ticket->listTicketAuteur($_SESSION['helpdeskidUtilisateur']);
-                    }
-                    
+                    $list = $Ticket->listTicket($_SESSION['helpdeskidUtilisateur']);
                     $i = 1;
                     foreach($list as $value){
                    ?>
@@ -142,32 +131,24 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th><?php echo $value['categorie'] ?></th>
                     <th><?php echo $value['status'] ?></th>
                     <th><?php echo $value['prenomAuteur'] ?></th>
-                    <?php
-                      if(isset($_SESSION['helpdeskadministrateur'])){
-                    ?>
                     <th><?php echo $value['prenomAgent'] ?></th>
-                    <?php } ?>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
                               </i>
                               Voir
                           </a>
-                          
-                          <a onclick="modifier('<?php echo $value['description'] ?>','<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
+                          <a onclick="modifier('<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
                               <!-- <i class="fas fa-pencil-alt">
                               </i> -->
                               Modifier
                           </a>
-                          <?php
-                            if(isset($_SESSION['helpdeskadministrateur']) || isset($_SESSION['helpdesksimple'])){
-                          ?>
+                          
                           <a onclick="supprimer('<?php echo $value['idTicket'] ?>')" class="btn btn-danger btn-sm" href="#">
                               <!-- <i class="fas fa-trash">
                               </i> -->
                               Supprimer
                           </a>
-                          <?php } ?>
                     </td>
                   </tr>
                   <?php 
@@ -176,7 +157,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               
                   </tbody>
                   <tfoot>
-                  <!-- <tr>
+                  <tr>
                     <th>&#8470;</th>
                     <th>Description</th>
                     <th>Priorité</th>
@@ -185,7 +166,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th>Auteur</th>
                     <th>Assigné à</th>
                     <th>Option</th>
-                  </tr> -->
+                  </tr>
                   </tfoot>
                 </table>
               </div>
@@ -515,15 +496,15 @@ if(!isset($_SESSION['helpdeskconnected'])){
     })
   }
 
-  function modifier(idPriorite,idCategorie,idStatus,idAuteur,description,idAssigne,idTicket){
+  function modifier(idPriorite,idCategorie,idStatus,idAuteur,idAssigne,idTicket){
     $("#idPriorite2").val(idPriorite);
     $("#idCategorie2").val(idCategorie);
     $("#idStatus2").val(idStatus);
     $("#idAuteur2").val(idAuteur);
-    $("#description2").val(description);
+    // $("#description2").val(description);
     $("#idAssigne2").val(idAssigne);
     $("#modifier").val(idTicket);
-  
+    alert(idAssigne)
   }
 
 </script>
