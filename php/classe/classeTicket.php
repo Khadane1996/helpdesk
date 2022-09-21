@@ -153,9 +153,9 @@
 		}
 	
 		// Liste des Tickets
-		public function listTicket(){
+		public function listTicket($idAuteur){
 			$list = array();
-			$requete = Connexion::Connect()->query("SELECT * FROM vticket");
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket WHERE idAuteur = \"$idAuteur\" ");
 
 			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
 			foreach ($requete as $donnee) {
