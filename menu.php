@@ -93,7 +93,7 @@
                   <?php 
                     if(isset($_SESSION['helpdesktechnicien'])){
                   ?>
-                  <!-- Mettre ici les menu ... -->
+                  <!-- Mettre ici les menu que le technicien peut voir... -->
                   <?php 
                     }
                   ?>
@@ -101,7 +101,7 @@
                   <?php 
                     if(isset($_SESSION['helpdesksimple'])){
                   ?>
-                  <!-- Mettre ici les menu ... -->
+                  <!-- Mettre ici les menu que l'utilisateur peut voir ... -->
                   <?php 
                     }
                   ?>

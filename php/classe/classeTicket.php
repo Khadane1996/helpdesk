@@ -153,7 +153,19 @@
 		}
 	
 		// Liste des Tickets
-		public function listTicket($idAuteur){
+		public function listTicket(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket ");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		// Liste des tickets de l'utilisateur
+		public function listTicketAuteur($idAuteur){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM vticket WHERE idAuteur = \"$idAuteur\" ");
 
@@ -163,6 +175,20 @@
 			}
 			return $list;
 		}
+
+		// Liste des tickets assignés au technicien
+		public function listTicketTechnicien($idAssigne){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket WHERE idAssigne = \"$idAssigne\" ");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		
 
 		// Liste des Tickets ouverts
 		public function listTicketOuvert(){

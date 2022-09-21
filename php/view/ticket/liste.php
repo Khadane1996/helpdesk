@@ -119,7 +119,14 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <?php 
                     require_once('../../../php/classe/classeTicket.php');
                     $Ticket = new Ticket();
-                    $list = $Ticket->listTicket($_SESSION['helpdeskidUtilisateur']);
+                    if(isset($_SESSION['helpdeskadministrateur'])){
+                      $list = $Ticket->listTicket();
+                    }else if(isset($_SESSION['helpdesktechnicien'])){
+                      $list = $Ticket->listTicketTechnicien($_SESSION['helpdeskidUtilisateur']);
+                    }else if(isset($_SESSION['helpdesksimple'])){
+                      $list = $Ticket->listTicketAuteur($_SESSION['helpdeskidUtilisateur']);
+                    }
+                    
                     $i = 1;
                     foreach($list as $value){
                    ?>
