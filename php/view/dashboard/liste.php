@@ -84,7 +84,14 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                         
                                         require_once('../../../php/classe/classeTicket.php');
                                         $Ticket = new Ticket();
-                                        $list = $Ticket->listTicketOuvert();
+                                        if(isset($_SESSION['helpdeskadministrateur'])){
+                                          $list = $Ticket->listTicketOuvert();
+                                        }else if(isset($_SESSION['helpdesktechnicien'])){
+                                          $list = $Ticket->listTicketOuvertTech($_SESSION['helpdeskidUtilisateur']);
+                                        }
+                                        else if(isset($_SESSION['helpdesksimple'])){
+                                          $list = $Ticket->listTicketOuvertUtilisateur($_SESSION['helpdeskidUtilisateur']);
+                                        }
                                         $nombre = count($list);
                                         echo "<h3>$nombre</h3>";                         
                                   ?> 

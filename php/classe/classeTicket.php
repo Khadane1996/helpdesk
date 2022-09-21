@@ -202,6 +202,28 @@
 			return $list;
 		}
 
+		public function listTicketOuvertTech($idAssigne){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idStatus='1' AND idAssigne = \"$idAssigne\" ");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		public function listTicketOuvertUtilisateur($idAuteur){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idStatus='1' AND idAuteur = \"$idAuteur\" ");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
 		// Liste des Tickets fermés
 		public function listTicketFerme(){
 			$list = array();
