@@ -113,25 +113,25 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/categorie/liste.php" class="nav-link">
+                    <a href="../../../php/view/categorie/liste.php" class="nav-link <?php if($lien[0] == 'categorie') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Catégorie</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/priorite/liste.php" class="nav-link">
+                    <a href="../../../php/view/priorite/liste.php" class="nav-link <?php if($lien[0] == 'priorite') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Priorité</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/status/liste.php" class="nav-link">
+                    <a href="../../../php/view/status/liste.php" class="nav-link <?php if($lien[0] == 'status') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Status</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link <?php if($lien[0] == 'localite') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Localité</p>
                     </a>
