@@ -111,7 +111,11 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th>Catégorie</th>
                     <th>Status</th>
                     <th>Auteur</th>
+                    <?php
+                      if(isset($_SESSION['helpdeskadministrateur'])){
+                    ?>
                     <th>Assigné à</th>
+                    <?php } ?>
                     <th>Option</th>
                   </tr>
                   </thead>
@@ -138,7 +142,11 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th><?php echo $value['categorie'] ?></th>
                     <th><?php echo $value['status'] ?></th>
                     <th><?php echo $value['prenomAuteur'] ?></th>
+                    <?php
+                      if(isset($_SESSION['helpdeskadministrateur'])){
+                    ?>
                     <th><?php echo $value['prenomAgent'] ?></th>
+                    <?php } ?>
                     <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-eye">
@@ -151,12 +159,15 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               </i> -->
                               Modifier
                           </a>
-                          
+                          <?php
+                            if(isset($_SESSION['helpdeskadministrateur']) || isset($_SESSION['helpdesksimple'])){
+                          ?>
                           <a onclick="supprimer('<?php echo $value['idTicket'] ?>')" class="btn btn-danger btn-sm" href="#">
                               <!-- <i class="fas fa-trash">
                               </i> -->
                               Supprimer
                           </a>
+                          <?php } ?>
                     </td>
                   </tr>
                   <?php 
@@ -165,7 +176,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               
                   </tbody>
                   <tfoot>
-                  <tr>
+                  <!-- <tr>
                     <th>&#8470;</th>
                     <th>Description</th>
                     <th>Priorité</th>
@@ -174,7 +185,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th>Auteur</th>
                     <th>Assigné à</th>
                     <th>Option</th>
-                  </tr>
+                  </tr> -->
                   </tfoot>
                 </table>
               </div>
