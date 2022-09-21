@@ -116,37 +116,6 @@ if(!isset($_SESSION['helpdeskconnected'])){
                   </tr>
                   </thead>
                   <tbody>
-                  
-                    <!-- <tr>
-                      <td>Problème d'accès</td>
-                      <td>Fatou Faye</td>
-                      <td>Haute</td>
-                      <td>Logicielle</td>
-                      <td class="project-state">
-                            <span class="badge badge-success">Ouvert</span>
-                      </td>
-                      <td> Agent 1 </td>
-                      
-                      <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" href="#">
-                                <i class="fas fa-eye">
-                                </i>
-                                Voir
-                            </a>
-                            <a class="btn btn-info btn-sm" href="#">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Modifier
-                            </a>
-                            <a class="btn btn-danger btn-sm" href="#">
-                                <i class="fas fa-trash">
-                                </i>
-                                Supprimer
-                            </a>
-                      </td>
-                    </tr> -->
-
-
                     <?php 
                     require_once('../../../php/classe/classeTicket.php');
                     $Ticket = new Ticket();
@@ -345,15 +314,15 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <div class="modal-dialog modal-lg" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modifier catégorie</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Modifier  ticket</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
                           <form id="monFormMod">
-                          <div class="row">
-                            <div class="col-6 col-sm-6">
+                            <div class="row">
+                              <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Priorite</label>
                                   <select required="" class="form-control select2" style="width: 100%;" id="idPriorite2" name="idPriorite">
@@ -390,7 +359,6 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   </select>
                                 </div>
                               </div>
-
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Status</label>
@@ -430,10 +398,10 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               </div>
 
                               <div class="col-6 col-sm-6">
-                                  <div class="form-group">
-                                    <label for="description" class="col-form-label">Description</label>
-                                    <input required type="text" class="form-control" id="description2" name="description">
-                                  </div>
+                                <div class="form-group">
+                                  <label for="description" class="col-form-label">Description</label>
+                                  <input type="text" class="form-control" id="description2" name="description">
+                                </div>
                               </div>
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
@@ -453,15 +421,13 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   </select>
                                 </div>
                               </div>
-                              
-                              
-                            </div>  
-                            <input type="hidden" name="modifier" id="modifier">
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                              <button type="submit" class="btn btn-primary" name="action">Modifier</button>
+                             </div>
+                                <input type="hidden" name="modifier" id="modifier">
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                  <button type="submit" class="btn btn-primary" name="action">Appliquer changements</button>
+                                </div>
                             </div>
-                          </div>
                           </form>
                         </div>   
                       </div>
