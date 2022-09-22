@@ -17,10 +17,22 @@ $(function(){
                         // window.location.href = "creche_liste";
                         window.location.reload();
                     });
-                }else{ 
+                }
+                else if(parseInt(msg)==2){
                     Swal.fire(
                     'Désolé!',
-                    'Une erreur est survenue lors de la connexion à la base de données, veuillez réessayer plus tard',
+                    'Ce login existe déjà!',
+                    'error'
+                    )
+                    $(document).click(function(){
+                        // window.location.href = "creche_liste";
+                        window.location.reload();
+                    });
+                }
+                else if(parseInt(msg)==3){ 
+                    Swal.fire(
+                    'Désolé!',
+                    'Cet email existe déjà',
                     'error'
                     )
                 }

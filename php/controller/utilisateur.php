@@ -28,9 +28,16 @@
     }else if(isset($_POST['ajouter'])){
         require_once('../classe/classeUtilisateur.php');
         $Utilisateur = new Utilisateur();
-            
-        echo $Utilisateur->addUtilisateur($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $_POST['motDePasse']);
-        
+        if ($Utilisateur->emailExist(htmlspecialchars($_POST['email'])) == false && $Utilisateur->loginExist(htmlspecialchars($_POST['login'])) == false) {
+            $Utilisateur = new Utilisateur();
+            echo $Utilisateur->addUtilisateur($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['idRole'], $_POST['login'], $_POST['motDePasse']);
+        }
+        else if ($Utilisateur->loginExist(htmlspecialchars($_POST['login'])) == true) {
+            echo 2;
+       }
+       else if ($Utilisateur->emailExist(htmlspecialchars($_POST['email'])) == true){
+           echo 3;
+       }
     }else if(isset($_POST['modifier'])){
         require_once('../classe/classeUtilisateur.php');
         $Utilisateur = new Utilisateur();
