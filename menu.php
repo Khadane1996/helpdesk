@@ -25,7 +25,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="../../../php/view/dashboard/liste" class="nav-link <?php if($lien[0] == 'dashboard') echo 'active'; ?>">
+            <a href="../../../php/view/dashboard/liste.php" class="nav-link <?php if($lien[0] == 'dashboard') echo 'active'; ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Tableau de bord
@@ -39,7 +39,7 @@
 
           ?>
           <li class="nav-item">
-            <a href="../../../php/view/utilisateur/liste" class="nav-link <?php if($lien[0] == 'utilisateur') echo 'active'; ?>">
+            <a href="../../../php/view/utilisateur/liste.php" class="nav-link <?php if($lien[0] == 'utilisateur') echo 'active'; ?>">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Utilisateurs
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../../../php/view/role/liste" class="nav-link <?php if($lien[0] == 'role') echo 'active'; ?>">
+            <a href="../../../php/view/role/liste.php" class="nav-link <?php if($lien[0] == 'role') echo 'active'; ?>">
               <i class="nav-icon fas fa-users-cog"></i>
               <p>
                 Role
@@ -58,7 +58,7 @@
           </li>
           <?php } ?>
           <li class="nav-item">
-            <a href="../../../php/view/ticket/liste" class="nav-link <?php if($lien[0] == 'ticket') echo 'active'; ?>">
+            <a href="../../../php/view/ticket/liste.php" class="nav-link <?php if($lien[0] == 'ticket') echo 'active'; ?>">
               <i class="nav-icon fas fa-tags"></i>
               <p>
                 Tickets
@@ -107,25 +107,25 @@
                   ?>
                   
 
-                    <a href="../../../php/view/agent/liste" class="nav-link <?php if($lien[0] == 'agent') echo 'active'; ?>">
+                    <a href="../../../php/view/agent/liste.php" class="nav-link <?php if($lien[0] == 'agent') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Agent</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/categorie/liste" class="nav-link <?php if($lien[0] == 'categorie') echo 'active'; ?>">
+                    <a href="../../../php/view/categorie/liste.php" class="nav-link <?php if($lien[0] == 'categorie') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Catégorie</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/priorite/liste" class="nav-link <?php if($lien[0] == 'priorite') echo 'active'; ?>">
+                    <a href="../../../php/view/priorite/liste.php" class="nav-link <?php if($lien[0] == 'priorite') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Priorité</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../../php/view/status/liste" class="nav-link <?php if($lien[0] == 'status') echo 'active'; ?>">
+                    <a href="../../../php/view/status/liste.php" class="nav-link <?php if($lien[0] == 'status') echo 'active'; ?>">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Status</p>
                     </a>

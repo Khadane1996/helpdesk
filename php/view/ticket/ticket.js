@@ -53,7 +53,6 @@ $(function(){
                     'success'
                     )
                     $(document).click(function(){
-                        // window.location.href = "creche_liste";
                         window.location.reload();
                     });
                 }else{ 
