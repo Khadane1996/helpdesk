@@ -114,7 +114,14 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   <?php 
                                       require_once('../../../php/classe/classeTicket.php');
                                       $Ticket = new Ticket();
-                                      $list = $Ticket->listTicketFerme();
+                                      if(isset($_SESSION['helpdeskadministrateur'])){
+                                        $list = $Ticket->listTicketFerme();
+                                      }else if(isset($_SESSION['helpdesktechnicien'])){
+                                        $list = $Ticket->listTicketFermeTech($_SESSION['helpdeskidUtilisateur']);
+                                      }
+                                      else if(isset($_SESSION['helpdesksimple'])){
+                                        $list = $Ticket->listTicketFermeUtilisateur($_SESSION['helpdeskidUtilisateur']);
+                                      }
                                       $nombre = count($list);
                                       echo "<h3>$nombre</h3>";                         
                                   ?> 
@@ -216,9 +223,34 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <tr>
                       <td><b>Top Urgency Count</b></td>
                       <td><ul style="list-style-type:none;">
-                        <li><a href="#">6 Hautes</a></li>
-                        <li><a href="#">5 Basses</a></li>
-                        <li><a href="#">4 Moyennes</a></li>
+                        <li><a href="#">
+                                    <?php 
+                                      require_once('../../../php/classe/classeTicket.php');
+                                      $Ticket = new Ticket();
+                                      $list = $Ticket->listTicketPrioriteHaute();
+                                      $nombre = count($list);
+                                      echo $nombre;                         
+                                    ?> 
+                           Hautes</a></li>
+                        <li><a href="#">
+                                    <?php 
+                                      require_once('../../../php/classe/classeTicket.php');
+                                      $Ticket = new Ticket();
+                                      $list = $Ticket->listTicketPrioriteMoyenne();
+                                      $nombre = count($list);
+                                      echo $nombre;                         
+                                    ?>  
+                          Moyennes</a></li>
+                        <li><a href="#">
+                                    <?php 
+                                      require_once('../../../php/classe/classeTicket.php');
+                                      $Ticket = new Ticket();
+                                      $list = $Ticket->listTicketPrioriteBasse();
+                                      $nombre = count($list);
+                                      echo $nombre;                         
+                                    ?>  
+                          Basses</a></li>
+                        
                       </ul></td>                   
                     </tr>
                     <tr>

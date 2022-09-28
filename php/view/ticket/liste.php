@@ -110,8 +110,20 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th>Priorité</th>
                     <th>Catégorie</th>
                     <th>Status</th>
+                    
+
+                    <?php
+                        if(isset($_SESSION['helpdeskadministrateur']) || isset($_SESSION['helpdesktechnicien'])){
+                    ?>
                     <th>Auteur</th>
+                    <?php } ?>
+
+                    <?php
+                        if(isset($_SESSION['helpdeskadministrateur'])){
+                    ?>
                     <th>Assigné à</th>
+                    <?php } ?>
+
                     <th>Option</th>
                   </tr>
                   </thead>
@@ -119,7 +131,15 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <?php 
                     require_once('../../../php/classe/classeTicket.php');
                     $Ticket = new Ticket();
-                    $list = $Ticket->listTicket($_SESSION['helpdeskidUtilisateur']);
+                    // $list = $Ticket->listTicket($_SESSION['helpdeskidUtilisateur']);
+                    if(isset($_SESSION['helpdeskadministrateur'])){
+                      $list = $Ticket->listTicket($_SESSION['helpdeskidUtilisateur']);
+                    }else if(isset($_SESSION['helpdesktechnicien'])){
+                      $list = $Ticket->listTicketTechnicien($_SESSION['helpdeskidUtilisateur']);
+                    }
+                    else if(isset($_SESSION['helpdesksimple'])){
+                      $list = $Ticket->listTicketAuteur($_SESSION['helpdeskidUtilisateur']);
+                    }
                     $i = 1;
                     foreach($list as $value){
                    ?>
@@ -130,25 +150,41 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th><?php echo $value['priorite'] ?></th>
                     <th><?php echo $value['categorie'] ?></th>
                     <th><?php echo $value['status'] ?></th>
+
+                    <?php
+                        if(isset($_SESSION['helpdeskadministrateur'])  || isset($_SESSION['helpdesktechnicien'])){
+                    ?>
                     <th><?php echo $value['prenomAuteur'] ?></th>
+                    <?php } ?>
+
+
+                    <?php
+                        if(isset($_SESSION['helpdeskadministrateur'])){
+                    ?>
                     <th><?php echo $value['prenomAgent'] ?></th>
+                    <?php } ?>
+
+
                     <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
+                          <a  onclick="voir('<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target=".bd-example-modal-lg3" data-whatever="@mdo">
                               <i class="fas fa-eye">
                               </i>
                               Voir
-                          </a>
+                          </a> 
                           <a onclick="modifier('<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg2" data-whatever="@mdo">
                               <!-- <i class="fas fa-pencil-alt">
                               </i> -->
                               Modifier
                           </a>
-                          
+                          <?php
+                            if(isset($_SESSION['helpdeskadministrateur']) || isset($_SESSION['helpdesksimple'])){
+                          ?>
                           <a onclick="supprimer('<?php echo $value['idTicket'] ?>')" class="btn btn-danger btn-sm" href="#">
                               <!-- <i class="fas fa-trash">
                               </i> -->
                               Supprimer
                           </a>
+                          <?php } ?>
                     </td>
                   </tr>
                   <?php 
@@ -157,7 +193,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                               
                   </tbody>
                   <tfoot>
-                  <tr>
+                  <!-- <tr>
                     <th>&#8470;</th>
                     <th>Description</th>
                     <th>Priorité</th>
@@ -166,7 +202,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     <th>Auteur</th>
                     <th>Assigné à</th>
                     <th>Option</th>
-                  </tr>
+                  </tr> -->
                   </tfoot>
                 </table>
               </div>
@@ -433,6 +469,72 @@ if(!isset($_SESSION['helpdeskconnected'])){
                     </div>
                   </div>
                   <!-- modifier ticket fin -->
+                  
+                  <!-- infos ticket debut -->
+                  <div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Informations  ticket</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="#">
+                            <div class="row">
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Priorite</label>
+                                  <h6 id="idPriorite2" value="<?php echo $value['idPriorite'] ?>"><?php echo $value['libelle'] ?></h6>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Categorie</label>
+                                  <h6 id="idCategorie2" value="<?php echo $value['idCategorie'] ?>"><?php echo $value['libelle'] ?></h6>
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Status</label>
+                                  <h6 id="idStatus2" value="<?php echo $value['idStatus'] ?>"><?php echo $value['libelle'] ?></h6>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Auteur</label>
+                                  <h6 id="idAuteur2" value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></h6>
+                                </div>
+                              </div>
+
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label for="description" class="col-form-label">Description</label>
+                                  <h6 value="" id="description2"></h6>
+                                </div>
+                              </div>
+                              <div class="col-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Assigne à</label>
+                                  <h6 id="idAssigne2" value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></h6>
+                                </div>
+                              </div>
+                             </div>
+                                <input type="hidden" name="">
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Quitter</button>
+                                  <!-- <button type="submit" class="btn btn-primary" name="">Créer</button> -->
+                                </div>
+                            </div>
+                          </form>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+                  <!--  infos  ticket fin -->
 
   </div>
   <!-- /.content-wrapper -->
@@ -506,5 +608,17 @@ if(!isset($_SESSION['helpdeskconnected'])){
     $("#modifier").val(idTicket);
     alert(idAssigne)
   }
+
+  function voir(idPriorite,idCategorie,idStatus,idAuteur,description,idAssigne,idTicket){
+    $("#idPriorite2").val(idPriorite);
+    $("#idCategorie2").val(idCategorie);
+    $("#idStatus2").val(idStatus);
+    $("#idAuteur2").val(idAuteur);
+    $("#description2").val(description);
+    $("#idAssigne2").val(idAssigne);
+    $("#voir").val(idTicket);
+  
+  }
+
 
 </script>

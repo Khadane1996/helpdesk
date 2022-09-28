@@ -202,6 +202,7 @@
 			return $list;
 		}
 
+		// Liste des Tickets ouverts assignés à l'agent(vue agent)
 		public function listTicketOuvertTech($idAssigne){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idStatus='1' AND idAssigne = \"$idAssigne\" ");
@@ -213,6 +214,7 @@
 			return $list;
 		}
 
+		// Liste des Tickets ouverts par l'utilisateur(vue utilisateur)
 		public function listTicketOuvertUtilisateur($idAuteur){
 			$list = array();
 			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idStatus='1' AND idAuteur = \"$idAuteur\" ");
@@ -235,19 +237,79 @@
 			}
 			return $list;
 		}
-	    
+
+		// Liste des Tickets fermés assignés à l'agent(vue agent)
+		public function listTicketFermeTech($idAssigne){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idStatus='2' AND idAssigne = \"$idAssigne\" ");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		// Liste des Tickets fermés par l'utilisateur(vue utilisateur)
+		public function listTicketFermeUtilisateur($idAuteur){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idStatus='2' AND idAuteur = \"$idAuteur\" ");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		// Liste des Tickets avec priorite haute
+		public function listTicketPrioriteHaute(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idPriorite='2'");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		// Liste des Tickets avec priorite moyenne
+		public function listTicketPrioriteMoyenne(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idPriorite='3'");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
+		// Liste des Tickets avec priorite basse
+		public function listTicketPrioriteBasse(){
+			$list = array();
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket where idPriorite='4'");
+
+			//On récupère le résultat de la requete, on le parcours, on le met dans une variable qu'on retourne 
+			foreach ($requete as $donnee) {
+				$list[] = $donnee;
+			}
+			return $list;
+		}
+
 
 		// Details ticket
-		// public function detailsTicket($idTicket){
-		// 	$list = array();
+		public function detailsTicket($idTicket){
+			$list = array();
 
-		// 	$requete = Connexion::Connect()->query("SELECT * FROM vTicket WHERE idTicket = \"$idTicket\" ");
+			$requete = Connexion::Connect()->query("SELECT * FROM vticket WHERE idTicket = \"$idTicket\" ");
 
-		// 	foreach ($requete as $donnee){
-		// 		$list[] = $donnee;
-		// 	}
-		// 	return $list;
-		// }
+			foreach ($requete as $donnee){
+				$list[] = $donnee;
+			}
+			return $list;
+		}
 	    
 
 		// Suppression de ticket
