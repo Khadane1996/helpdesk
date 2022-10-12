@@ -96,7 +96,7 @@
                         <!-- Profil Start -->
                         <div class="media">
                           <div class="media-body">
-                            <button  onclick="location.href='#';" type="button" class="btn .btn-lg btn-block btn-sm" > <i class="fa fa-user-cog"></i>  Profil</button>     
+                            <button  onclick="location.href='../../../php/view/home/Profile.php';" type="button" class="btn .btn-lg btn-block btn-sm" > <i class="fa fa-user-cog"></i>  Profile</button>     
                           </div>
                         </div>
                         <!-- Profil End -->

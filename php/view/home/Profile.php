@@ -1,68 +1,162 @@
-<!--start container--><script type="text/javascript" src="php/view/utilisateur/utilisateur.js"></script>
-          <div class="container">
-            <div class="loader loaderMessage loader-bar" data-text="Enr&eacute;gistrement des modifications en cours. Veuillez patienter" data-rounded></div>
-            <div>
-              <div class="row">
-                <div class="col s12 m8 l6 offset-m2 offset-l3">
-                  <h4 class="header center">Mon Profile</h4>
-                  <div id="profile-card" class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="images/gallary/3.png" alt="user bg">
-                    </div>
-                    <div class="card-content">
-                      <img src="images/avatar/avatar-7.png" alt="" class="circle responsive-img activator card-profile-image cyan lighten-1 padding-2">
-                      <a class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4 right">
-                        <i class="material-icons">edit</i>
-                      </a>
-                      <h5 class="card-title activator grey-text text-darken-4">
-                        <span style="display: inline-block; position: relative; top: -5px;"> <?php echo $_SESSION['sirmelprenom']; ?> <?php echo $_SESSION['sirmelnom']; ?></span></h5>
-                      <p>
-                        <i class="material-icons">perm_identity</i> 
-                        <span style="display: inline-block; position: relative; top: -5px;"><?php echo $_SESSION['sirmelprofile']; ?></span> 
-                      </p>
-                     
-                      <br>
-                      <br>
-                      <br>
-                      <br>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Modification de mot de passe
-                          <i class="material-icons right">close</i>
-                        </span>
-                      <div class="row">
-                        <form class="col s12" id="monFormUpdateProfile">
-                          <div class="row">
-                            <div class="input-field col s12 m12 l12">
-                              <input required id="motDePasseActuel" name="motDePasseActuel" type="password">
-                              <label for="motDePasseActuel">Mot de passe actuel</label>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="input-field col s12 m12 l12">
-                              <input required id="motDePasse" name="motDePasse" type="password">
-                              <label for="motDePasse">Nouveau Mot de passe</label>
-                            </div>
-                            <div class="input-field col s12 m12 l12">
-                              <input required id="motDePasse2" name="motDePasse2" type="password">
-                              <label for="motDePasse2">Confirmer nouveau mot de passe</label>
-                            </div>
-                          </div>
-                          <div class="row">
-                              <div class="input-field col s12">
-                                <input type="hidden" name="updateProfile">
-                                <input type="hidden" name="login" id="login" value="<?php echo $_SESSION['sirmellogin']; ?>">
-                                <button class="btn green waves-effect waves-light right" type="submit" name="action">Valider
-                                </button>
-                                <a class="btn mr-1 card-title red waves-effect waves-light right" href="javascript:void(0);" style="font-size: 1rem;">Annuler
-                                </a>
-                              </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+<!DOCTYPE html>
+<?php
+@session_start();  
+
+if(!isset($_SESSION['helpdeskconnected'])){
+
+    header("location:../../../index.php");
+
+}
+
+?>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HelpDesk | Profile</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="../../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../../../plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../../plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../../plugins/summernote/summernote-bs4.min.css">
+
+   <!-- DataTables -->
+ <link rel="stylesheet" href="../../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+ <link rel="stylesheet" href="../../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+ <link rel="stylesheet" href="../../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+    <!-- Toastr -->
+    <link rel="stylesheet" href="../../../plugins/toastr/toastr.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+
+ <!-- Include navbar et menu début -->
+ <?php
+    include('../../../navbar.php');
+    include('../../../menu.php');
+  ?>
+  <!-- Include navbar et menu fin -->
+
+  <style>
+      .centrer-profil {
+        width: auto;
+        margin: auto;
+        
+      }
+      h1,h3{
+        text-align: right;
+        /* color: #4287f5; */
+      }
+    </style>
+
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Profile</h1>
           </div>
+          
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div  class="centrer-profil col-6">
+            
+                      <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="../../../docs/assets/img/avatar-7.png"
+                       alt="User profile picture">
+                </div>
+
+                <h1 class="profile-username text-center"><?php echo $_SESSION['helpdeskprenom'] . " " . $_SESSION['helpdesknom'] ?></h1>
+
+                <!-- <p class="text-muted text-center">Software Engineer</p> -->
+                
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>Login</b> :  <?php echo $_SESSION['helpdesklogin']?>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Adresse email</b> :  <?php echo $_SESSION['helpdeskemail'] ?>
+                  </li>
+                  <li class="list-group-item">
+                    <b>T&eacute;l&eacute;phone</b> :  <?php echo $_SESSION['helpdesktelephone']?>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Mot de passe</b> :  ****************
+                  </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b>Modifier</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    
+    
+
+
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+
+   <!-- Include footer début -->
+  <?php
+    include('../../../footer.php');
+  ?>
+  <!-- Include footer fin -->
+<script type="text/javascript" src="status.js"></script>
+<!-- ./wrapper -->
+
+<script type="text/javascript">
+
+  function modifier(libelle,idElement){
+    
+    $("#modifier").val(idElement);
+  }
+
+</script>

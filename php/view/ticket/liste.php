@@ -166,7 +166,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
 
 
                     <td class="project-actions text-right">
-                          <a  onclick="voir('<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $value['idTicket'] ?>')" class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target=".bd-example-modal-lg3" data-whatever="@mdo">
+                          <a  onclick="voir('<?php echo $value['idPriorite'] ?>','<?php echo $value['idCategorie'] ?>','<?php echo $value['idStatus'] ?>','<?php echo $value['idAuteur'] ?>','<?php echo $value['idAssigne'] ?>','<?php echo $ticketID = $value['idTicket'] ?>')" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg3" data-whatever="@mdo">
                               <i class="fas fa-eye">
                               </i>
                               Voir
@@ -268,9 +268,14 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   </select>
                                 </div>
                               </div>
+                              
+                              <?php
+                                  if(isset($_SESSION['helpdeskadministrateur'])){
+                              ?>
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Status</label>
+                                  
                                   <select required="" class="form-control select2" style="width: 100%;" id="idStatus" name="idStatus">
                         
                                     <option value="" selected disabled>-Choisir-</option>
@@ -286,6 +291,7 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   </select>
                                 </div>
                               </div>
+                              
 
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
@@ -305,6 +311,15 @@ if(!isset($_SESSION['helpdeskconnected'])){
                                   </select>
                                 </div>
                               </div>
+
+                              <?php } else{ ?>
+                                
+                                <input type="hidden" id="idStatus" name="idStatus" value="1">
+                                <input type="hidden" id="idAuteur" name="idAuteur" value="<?php echo $_SESSION['helpdeskidUtilisateur'] ?>">
+                                
+                              <?php }
+                                      
+                              ?>
 
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
@@ -483,51 +498,59 @@ if(!isset($_SESSION['helpdeskconnected'])){
                         <div class="modal-body">
                           <form id="#">
                             <div class="row">
+                              <?php 
+                                    require_once('../../../php/classe/classeTicket.php');
+                                    $Ticket = new Ticket();
+                                    $list = $Ticket->detailsTicket($ticketID);
+                                    foreach($list as $value){
+                              ?>
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Priorite</label>
-                                  <h6 id="idPriorite2" value="<?php echo $value['idPriorite'] ?>"><?php echo $value['libelle'] ?></h6>
+                                  <h6 id="idPriorite3" value="<?php echo $value['idPriorite'] ?>"><?php echo $value['priorite'] ?></h6>
                                 </div>
                               </div>
 
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Categorie</label>
-                                  <h6 id="idCategorie2" value="<?php echo $value['idCategorie'] ?>"><?php echo $value['libelle'] ?></h6>
+                                  <h6 id="idCategorie3" value="<?php echo $value['idCategorie'] ?>"><?php echo $value['categorie'] ?></h6>
                                 </div>
                               </div>
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Status</label>
-                                  <h6 id="idStatus2" value="<?php echo $value['idStatus'] ?>"><?php echo $value['libelle'] ?></h6>
+                                  <h6 id="idStatus3" value="<?php echo $value['idStatus'] ?>"><?php echo $value['status'] ?></h6>
                                 </div>
                               </div>
 
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Auteur</label>
-                                  <h6 id="idAuteur2" value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></h6>
+                                  <h6 id="idAuteur3" value="" ><?php echo $value['prenomAuteur'] ?></h6>
                                 </div>
                               </div>
 
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label for="description" class="col-form-label">Description</label>
-                                  <h6 value="" id="description2"></h6>
+                                  <h6 value="" id="description3"></h6>
                                 </div>
                               </div>
                               <div class="col-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Assigne à</label>
-                                  <h6 id="idAssigne2" value="<?php echo $value['idUtilisateur'] ?>"><?php echo $value['prenom'] ?></h6>
+                                  <h6 id="idAssigne3" value="" ><?php echo $value['prenomAgent'] ?></h6>
                                 </div>
                               </div>
                              </div>
-                                <input type="hidden" name="">
+                             <input type="hidden" name="voir" id="voir">
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Quitter</button>
-                                  <!-- <button type="submit" class="btn btn-primary" name="">Créer</button> -->
+                                  <!-- <button type="submit" class="btn btn-primary" name="action">Appliquer changements</button> -->
                                 </div>
+                                <?php }
+                                ?>
                             </div>
                           </form>
                         </div>   
@@ -606,18 +629,19 @@ if(!isset($_SESSION['helpdeskconnected'])){
     // $("#description2").val(description);
     $("#idAssigne2").val(idAssigne);
     $("#modifier").val(idTicket);
-    alert(idAssigne)
+    alert(idTicket)
   }
 
-  function voir(idPriorite,idCategorie,idStatus,idAuteur,description,idAssigne,idTicket){
-    $("#idPriorite2").val(idPriorite);
-    $("#idCategorie2").val(idCategorie);
-    $("#idStatus2").val(idStatus);
-    $("#idAuteur2").val(idAuteur);
-    $("#description2").val(description);
-    $("#idAssigne2").val(idAssigne);
-    $("#voir").val(idTicket);
-  
+  function voir(idPriorite,idCategorie,idStatus,idAuteur,idAssigne,idTicket){
+    // $("#idPriorite3").val(idPriorite);
+    // $("#idCategorie3").val(idCategorie);
+    // $("#idStatus3").val(idStatus);
+    // $("#idAuteur3").val(idAuteur);
+    // $("#description3").val(description);
+    // $("#idAssigne3").val(idAssigne);
+    // $("#voir").val(idTicket);
+    $ticketID = idTicket;
+    alert($ticketID)
   }
 
 

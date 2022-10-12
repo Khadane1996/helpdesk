@@ -65,10 +65,22 @@ CREATE TABLE `messagerie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+ALTER TABLE ticket
+ADD FOREIGN KEY (idPriorite) REFERENCES priorite(idPriorite);
+
+ALTER TABLE ticket
+ADD FOREIGN KEY (idCategorie) REFERENCES categorie(idCategorie);
+
+
 CREATE VIEW vutilisateur AS
-SELECT u.*, r.libelle as role
-FROM utilisateur u, role r
-WHERE u.idRole = r.idRole
+SELECT 
+  u.*, 
+  r.libelle as role
+FROM 
+  utilisateur u, 
+  role r
+WHERE 
+  u.idRole = r.idRole
 
 
 
@@ -102,27 +114,42 @@ WHERE
 
 
 
-
-
-
-
 CREATE OR REPLACE VIEW vagent AS
-SELECT  DISTINCT 
+SELECT
   u.prenom,
   u.nom,
   u.email,
   u.etat,
-  o.tickets_ouverts,
-  f.tickets_fermes
-
+  u.idUtilisateur,
+  (SELECT count(*) FROM ticket WHERE idAssigne = u.idUtilisateur AND idStatus = 1) AS tickets_ouverts,
+  (SELECT count(*) FROM ticket WHERE idAssigne = u.idUtilisateur AND idStatus = 2) AS tickets_fermes
 FROM
-  (SELECT * FROM utilisateur WHERE idRole='2') u,
-  (SELECT count(*) AS tickets_ouverts FROM ticket WHERE idStatus='1') o,
-  (SELECT count(*) AS tickets_fermes FROM ticket WHERE idStatus='2') f,
-  (SELECT idAssigne FROM ticket) t
 
+  utilisateur u
+  
 WHERE   
-  u.idUtilisateur = t.idAssigne 
+  u.idRole = 2
+
+
+
+
+--CREATE OR REPLACE VIEW vagent AS
+--SELECT  DISTINCT 
+--  u.prenom,
+--  u.nom,
+--  u.email,
+--  u.etat,
+--  o.tickets_ouverts,
+-- f.tickets_fermes
+
+--FROM
+--  (SELECT * FROM utilisateur WHERE idRole='2') u,
+--  (SELECT count(*) AS tickets_ouverts FROM ticket WHERE idStatus='1') o,
+--  (SELECT count(*) AS tickets_fermes FROM ticket WHERE idStatus='2') f,
+--  (SELECT idAssigne FROM ticket) t
+
+--WHERE   
+--  u.idUtilisateur = t.idAssigne 
 
 
 
@@ -139,3 +166,12 @@ WHERE
 
 -- WHERE
 --   u.idUtilisateur = t.idAssigne
+
+
+
+
+
+--circuit , etape , information
+
+
+
